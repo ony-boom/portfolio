@@ -1,0 +1,48 @@
+---
+interface Props {
+  title: string;
+  where: {
+    name: string;
+    url?: string;
+  };
+  when: [Date, Date?];
+}
+
+const { title, where, when} = Astro.props;
+const whenWithDefault = (when.length === 1 ? [...when, new Date()] : when) as [Date, Date];
+
+const formattedDates = whenWithDefault.map((date) =>
+  new Date(date).toLocaleDateString("en-US", {
+    month: "long",
+    year: "numeric",
+  }),
+);
+---
+
+<li>
+  <h3 class="text-lg font-semibold">{title}</h3>
+
+  <p class="flex items-center justify-between text-neutral-600">
+    {
+      where.url ? (
+        <a href={where.url} target="_blank">
+          {where.name}
+        </a>
+      ) : (
+        <span>{where.name}</span>
+      )
+    }
+    <span>
+      <time datetime={whenWithDefault[0].toISOString()}>{formattedDates[0]}</time> -{" "}
+      <time datetime={(whenWithDefault[1] ?? new Date()).toISOString()}
+        >{formattedDates[1]}</time
+      >
+    </span>
+  </p>
+
+  <div class="mt-2">
+    <slot name="description" />
+  </div>
+
+  <slot name="extra" />
+</li>

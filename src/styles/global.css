@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+    --font-serif: "Crimson Pro", serif;
+}
+
+@layer components {
+    a {
+        @apply underline;
+    }
+}

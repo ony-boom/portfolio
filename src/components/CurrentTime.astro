@@ -1,0 +1,21 @@
+<span class="text-neutral space-x-1 print:hidden">
+  <span>Indian/Antananarivo:</span>
+  <span id="time"></span>
+</span>
+
+<script>
+  function updateTime() {
+    document.getElementById("time")!.textContent = new Date().toLocaleString(
+      "en-US",
+      {
+        timeZone: "Indian/Antananarivo",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      },
+    );
+  }
+
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
