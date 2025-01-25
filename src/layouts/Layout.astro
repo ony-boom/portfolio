@@ -4,20 +4,20 @@ import "../styles/global.css";
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/ico" href="/favicon.ico" />
-		<link
-			href="https://api.fontshare.com/v2/css?f[]=crimson-pro@1,2&display=swap"
-			rel="stylesheet"
-		/>
-		<meta name="generator" content={Astro.generator} />
-		<title>Ony | CV</title>
-	</head>
-	<body class="font-serif text-neutral-900">
-		<main class="mx-auto max-w-lg py-12">
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
+    <link
+      href="https://api.fontshare.com/v2/css?f[]=crimson-pro@1,2&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>Ony | CV</title>
+  </head>
+  <body class="font-serif text-neutral-900">
+    <main class="mx-auto max-w-lg px-6 py-12 md:px-0">
+      <slot />
+    </main>
+  </body>
 </html>
