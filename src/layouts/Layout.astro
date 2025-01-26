@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+// import PrintButton from "../components/Print.astro";
 ---
 
 <!doctype html>
@@ -15,9 +16,11 @@ import "../styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Ony | CV</title>
   </head>
-  <body class="font-serif text-neutral-900">
+  <body class="bg-neutral-100 font-serif text-neutral-900">
     <main class="mx-auto max-w-lg px-6 py-12 md:px-0">
       <slot />
+
+      <!-- <PrintButton /> -->
     </main>
   </body>
 </html>

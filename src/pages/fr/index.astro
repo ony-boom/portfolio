@@ -1,0 +1,115 @@
+---
+import "../../styles/global.css";
+import Layout from "../../layouts/Layout.astro";
+import Experience from "../../components/Experience.astro";
+import CurrentTime from "../../components/CurrentTime.astro";
+import ExperienceSection from "../../components/ExperienceSection.astro";
+---
+
+<Layout>
+  <div class="space-y-8">
+    <div>
+      <hgroup class="space-y-1">
+        <h1 class="text-3xl font-semibold">
+          <span class="underline">Ony</span>
+          <span class="uppercase">Rakotonirina</span>
+        </h1>
+        <p class="text-lg">Développeur web</p>
+      </hgroup>
+
+      <div class="mt-2 text-neutral-600">
+        <div class="flex flex-wrap space-x-2">
+          <p>il/lui</p>
+          <p>&bull;</p>
+          <p>22 ans</p>
+          <p class="print:hidden">&bull;</p>
+          <CurrentTime title="Fuseau horaire">
+            <span>Indien/Antananarivo:</span>
+          </CurrentTime>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="text-xl font-semibold">A propos de moi</h2>
+      <p class="mt-2"></p>
+    </section>
+
+    <ExperienceSection title="Experiences">
+      <Experience
+        when={[new Date("2023-03-14")]}
+        where={{
+          name: "BOCASAY",
+          url: "https://www.bocasay.com/madagascar-agile-it-service-centre/",
+        }}
+        title="Développeur web"
+      >
+        <p slot="description">
+          Développé une grande application web utilisant React, ExtJS, GraphQL
+          et SQL, améliorant significativement les performances et
+          l'architecture technologique. Optimisé l'interface utilisateur et
+          l'expérience utilisateur par une refonte stratégique, en mettant
+          l'accent sur la réactivité et l'ergonomie. Collaboré étroitement avec
+          l'équipe de développement pour concevoir et implémenter des interfaces
+          web modernes, intuitives et hautement performantes.
+        </p>
+      </Experience>
+
+      <Experience
+        title="Développeur frontend"
+        where={{
+          name: "Freelance",
+        }}
+        when={[new Date("2021-10-01"), new Date("2022-10-01")]}
+      >
+        <p slot="description">
+          Conception et développement d'applications web hautement réactives et
+          performantes, exploitant pleinement les technologies HTML5, CSS3,
+          JavaScript et React. Gestion proactive des délais de projet et
+          communication efficace avec les clients, assurant systématiquement le
+          respect des échéances définies.
+        </p>
+      </Experience>
+    </ExperienceSection>
+    <ExperienceSection title="Studies">
+      <Experience
+        title="Certificat en développement web"
+        where={{
+          name: "SAYNA",
+          url: "https://sayna.io/",
+        }}
+        when={[new Date("2019-10-01"), new Date("2021-07-01")]}
+      >
+        <p slot="description">
+          J'ai acquis les fondements essentiels en informatique, notamment les
+          algorithmes avancés, les structures de données complexes et la
+          programmation dans divers langages, établissant une base solide pour
+          le développement logiciel moderne.
+        </p>
+        <p slot="extra" class="mt-1">
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/1OdNuCwUzestFYlSSe5S_uqk_k7u0uRe-/view?usp=sharing"
+          >
+            <span class="text-neutral-600">Certificat</span>
+          </a>
+        </p>
+      </Experience>
+    </ExperienceSection>
+
+    <section>
+      <h2 class="text-xl font-semibold">Liens</h2>
+
+      <ul class="mt-3 list-disc space-y-4 pl-2">
+        <li>
+          <a href="https://github.com/ony-boom" target="_blank"> Github </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://linkedin.com/in/ony-boom">
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Layout>

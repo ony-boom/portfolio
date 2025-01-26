@@ -1,5 +1,13 @@
-<span class="text-neutral space-x-1 print:hidden">
-  <span>Indian/Antananarivo:</span>
+---
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+---
+
+<span title={title} class="text-neutral space-x-1 print:hidden">
+  <slot />
   <span id="time"></span>
 </span>
 
