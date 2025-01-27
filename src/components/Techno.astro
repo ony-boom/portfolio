@@ -1,0 +1,21 @@
+---
+interface Props {
+  techno: string[];
+}
+
+const { techno } = Astro.props;
+---
+
+<div class="flex gap-1">
+  <p class="font-semibold">Techno: {" "}</p>
+  <div class="flex flex-wrap gap-2">
+    {
+      techno.map((tech, index) => (
+        <span>
+          {tech}
+          {index < techno.length - 1 && <span>,</span>}
+        </span>
+      ))
+    }
+  </div>
+</div>
