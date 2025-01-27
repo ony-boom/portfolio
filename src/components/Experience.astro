@@ -6,13 +6,17 @@ interface Props {
     url?: string;
   };
   when: [Date, Date?];
+  locale?: string;
 }
 
-const { title, where, when} = Astro.props;
-const whenWithDefault = (when.length === 1 ? [...when, new Date()] : when) as [Date, Date];
+const { title, where, when, locale } = Astro.props;
+const whenWithDefault = (when.length === 1 ? [...when, new Date()] : when) as [
+  Date,
+  Date,
+];
 
 const formattedDates = whenWithDefault.map((date) =>
-  new Date(date).toLocaleDateString("en-US", {
+  new Date(date).toLocaleDateString(locale ?? "en-US", {
     month: "long",
     year: "numeric",
   }),
@@ -33,8 +37,10 @@ const formattedDates = whenWithDefault.map((date) =>
       )
     }
     <span>
-      <time datetime={whenWithDefault[0].toISOString()}>{formattedDates[0]}</time> -{" "}
-      <time datetime={(whenWithDefault[1] ?? new Date()).toISOString()}
+      <time class="capitalize" datetime={whenWithDefault[0].toISOString()}
+        >{formattedDates[0]}</time
+      > -{" "}
+      <time class="capitalize" datetime={(whenWithDefault[1] ?? new Date()).toISOString()}
         >{formattedDates[1]}</time
       >
     </span>

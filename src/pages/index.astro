@@ -11,7 +11,8 @@ import CurrentTime from "../components/CurrentTime.astro";
     <div>
       <hgroup class="space-y-1">
         <h1 class="text-3xl font-semibold">
-          <span class="underline">Ony</span> <span class="uppercase">Rakotonirina</span>
+          <span class="underline">Ony</span>
+          <span class="uppercase">Rakotonirina</span>
         </h1>
         <p class="text-lg">Web developer</p>
       </hgroup>
@@ -41,7 +42,7 @@ import CurrentTime from "../components/CurrentTime.astro";
 
     <ExperienceSection title="Experiences">
       <Experience
-        when={[new Date("2023-03-14")]}
+        when={[new Date("2023-04-14")]}
         where={{
           name: "BOCASAY",
           url: "https://www.bocasay.com/madagascar-agile-it-service-centre/",
@@ -49,12 +50,32 @@ import CurrentTime from "../components/CurrentTime.astro";
         title="Web developer"
       >
         <p slot="description">
-          Developed a large-scale web application using React, ExtJS, GraphQL,
-          and SQL, significantly enhancing technological infrastructure.
-          Strategically redesigned user interface and experience, focusing on
-          responsiveness and usability. Collaborated closely with development
-          team to design and implement modern, intuitive, and high-performance
-          web interfaces.
+          Developed a large-scale web application for SDS and cosmetic
+          regulation using <span class="font-semibold">React</span>, <span
+            class="font-semibold">ExtJS</span
+          >,
+          <span class="font-semibold">GraphQL</span>, and <span
+            class="font-semibold">SQL</span
+          >. Redesigned the responsive, user-friendly interface and collaborated
+          with the team to deliver high-performance web solutions.
+        </p>
+      </Experience>
+
+      <Experience
+        when={[new Date("2022-09-01"), new Date("2023-04-01")]}
+        where={{
+          name: "BOCASAY",
+          url: "https://www.bocasay.com/madagascar-agile-it-service-centre/",
+        }}
+        title="Internship"
+      >
+        <p slot="description">
+          Built a <span class="font-semibold"> VS Code plugin </span> that simplifies
+          i18n management across projects, implementing it in <span
+            class="font-semibold"
+          >
+            TypeScript
+          </span>
         </p>
       </Experience>
 
@@ -67,9 +88,13 @@ import CurrentTime from "../components/CurrentTime.astro";
       >
         <p slot="description">
           Designed and developed high-performance, responsive web applications
-          leveraging HTML5, CSS3, JavaScript, and React technologies.
-          Proactively managed project timelines and maintained effective client
-          communication, consistently ensuring timely project delivery.
+          leveraging <span class="font-semibold">HTML5</span>, <span
+            class="font-semibold">CSS3</span
+          >, <span class="font-semibold">nodejs</span>, and <span
+            class="font-semibold">React</span
+          >
+          technologies. Proactively managed project timelines and maintained effective
+          client communication, consistently ensuring timely project delivery.
         </p>
       </Experience>
     </ExperienceSection>
