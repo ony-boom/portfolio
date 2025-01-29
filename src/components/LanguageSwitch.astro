@@ -1,20 +1,28 @@
 ---
 const { pathname } = Astro.url;
-const currentLang = pathname === "/fr" ? "fr" : "en";
 ---
 
 <label class="print:hidden">
-  <select>
-    <option value="/fr" selected={currentLang === "fr"}>Français</option>
-    <option value="/" selected={currentLang === "en"}>English</option>
+  <select id="language-select">
+    <option value="/fr">Français</option>
+    <option value="/">English</option>
   </select>
 </label>
 
 <script>
-  const select = document.querySelector("select");
+  const select = document.querySelector(
+    "#language-select",
+  ) as HTMLSelectElement;
   if (select) {
+    const currentPath = window.location.pathname;
+    select.selectedIndex = currentPath === "/fr" ? 0 : 1;
+
     select.addEventListener("change", (e) => {
-      window.location.href = (e.target as HTMLSelectElement).value;
+      const target = e.target as HTMLSelectElement;
+      const newPath = target.options[target.selectedIndex].value;
+      if (newPath !== window.location.pathname) {
+        window.location.href = newPath;
+      }
     });
   }
 </script>
