@@ -2,10 +2,11 @@
 const { pathname } = Astro.url;
 
 const currentLang = pathname === "/fr" ? "fr" : "en";
+const value = currentLang === "fr" ? "/" : "/fr";
 ---
 
 <label class="print:hidden">
-  <select>
+  <select value={value}>
     <option value="/fr" selected={currentLang === "fr"}>Français</option>
     <option value="/" selected={currentLang === "en"}>English</option>
   </select>
