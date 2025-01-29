@@ -14,4 +14,8 @@
     a {
         @apply underline;
     }
+
+    p {
+        @apply max-w-lg
+    }
 }

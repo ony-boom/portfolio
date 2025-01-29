@@ -2,8 +2,8 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
-import ExperienceSection from "../components/ExperienceSection.astro";
 import CurrentTime from "../components/CurrentTime.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
 ---
 
 <Layout>
@@ -39,10 +39,10 @@ import CurrentTime from "../components/CurrentTime.astro";
     <section>
       <h2 class="text-xl font-semibold">About me</h2>
       <p class="mt-2">
-        I'm a web developer based in Antananarivo, Madagascar. I have experience
-        in developing large web applications using modern technologies. I am
-        passionate about web technologies and continuously strive to learn new
-        things to improve my skills.
+        I'm a web developer with 2 years of experience in building web
+        applications. I'm passionate about creating user-friendly, responsive
+        web applications that provide value to users. I'm always eager to learn
+        new technologies and improve my skills.
       </p>
     </section>
 
@@ -93,7 +93,11 @@ import CurrentTime from "../components/CurrentTime.astro";
         </p>
       </Experience>
     </ExperienceSection>
-    <ExperienceSection title="Studies">
+    <ExperienceSection
+      title="Studies"
+      class="print:mt-12"
+      style={{ "page-break-before": "always" }}
+    >
       <Experience
         title="Certificate in web development"
         where={{
@@ -103,9 +107,10 @@ import CurrentTime from "../components/CurrentTime.astro";
         when={[new Date("2019-10-01"), new Date("2021-07-01")]}
       >
         <p slot="description">
-          Designed and developed high-performance, responsive web applications.
-          Proactively managed project timelines and maintained effective client
-          communication, consistently ensuring timely project delivery.
+          Developed high-performance, responsive web applications, like online
+          learning platforms and ERP systems. Proactively managed project
+          timelines and maintained effective client communication, consistently
+          ensuring timely project delivery.
         </p>
 
         <p slot="extra" class="mt-2">
@@ -118,6 +123,22 @@ import CurrentTime from "../components/CurrentTime.astro";
         </p>
       </Experience>
     </ExperienceSection>
+
+    <section>
+      <h2 class="text-xl font-semibold">Languages</h2>
+
+      <ul class="mt-3 list-disc space-y-4 pl-2">
+        <li>
+          <p>Malagasy (native)</p>
+        </li>
+        <li>
+          <p>French (fluent)</p>
+        </li>
+        <li>
+          <p>English (technical proficiency)</p>
+        </li>
+      </ul>
+    </section>
 
     <section>
       <h2 class="text-xl font-semibold">Links</h2>

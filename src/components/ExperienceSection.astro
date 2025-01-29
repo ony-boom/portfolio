@@ -1,12 +1,13 @@
 ---
+import type { HTMLAttributes } from "astro/types";
 type Props = {
   title: string;
-};
+} & HTMLAttributes<"section">;
 
-const { title } = Astro.props;
+const { title, class: className, ...rest } = Astro.props;
 ---
 
-<section>
+<section {...rest} class:list={[className]}>
   <h2 class="text-xl font-semibold">{title}</h2>
 
   <ul class="mt-3 list-disc space-y-4 pl-2">

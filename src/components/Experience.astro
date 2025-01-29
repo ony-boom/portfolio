@@ -12,14 +12,17 @@ interface Props {
   techno?: string[];
 }
 
+const { pathname } = Astro.url;
 const { title, where, techno, when, locale } = Astro.props;
 const whenWithDefault = (when.length === 1 ? [...when, new Date()] : when) as [
   Date,
   Date,
 ];
 
+const isFrench = pathname === "/fr";
+const localeToUse = isFrench ? "fr-FR" : (locale ?? "en-US");
 const formattedDates = whenWithDefault.map((date) =>
-  new Date(date).toLocaleDateString(locale ?? "en-US", {
+  new Date(date).toLocaleDateString(localeToUse, {
     month: "long",
     year: "numeric",
   }),
