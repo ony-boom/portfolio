@@ -49,7 +49,9 @@ const formattedDates = whenWithDefault.map((date) =>
       <time
         class="capitalize"
         datetime={(whenWithDefault[1] ?? new Date()).toISOString()}
-        >{formattedDates[1]}</time
+        >{
+          when[1] ? formattedDates[1] : isFrench ? "Jusqu'à maintenant" : "Now"
+        }</time
       >
     </span>
   </p>
