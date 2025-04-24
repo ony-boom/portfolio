@@ -1,0 +1,157 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Experience from "../components/Experience.astro";
+import CurrentTime from "../components/CurrentTime.astro";
+import ExperienceSection from "../components/ExperienceSection.astro";
+---
+
+<Layout>
+  <div class="space-y-8">
+    <div>
+      <hgroup class="space-y-1">
+        <h1 class="text-3xl font-semibold">
+          <span class="underline">Ony</span>
+          <span class="uppercase">Rakotonirina</span>
+        </h1>
+        <p class="text-lg">Web developer</p>
+      </hgroup>
+
+      <div class="mt-2 text-neutral-600">
+        <!-- <div class="flex flex-wrap space-x-2">
+          <p>he/him</p>
+          <p>&bull;</p>
+          <p>22 years old</p>
+          <p class="print:hidden">&bull;</p>
+          <CurrentTime title="Timezone">
+            <span>Indian/Antananarivo:</span>
+          </CurrentTime>
+        </div> -->
+
+        <p class="mt-2 space-x-2">
+          <a href="mailto:onyrakoto27@gmail.com">onyrakoto27@gmail.com</a>
+          <span>&bull;</span>
+          <span>+261 034 93 157 82</span>
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <h2 class="text-xl font-semibold">About me</h2>
+      <p class="mt-2">
+        I'm a web developer with 2 years of experience in building web
+        applications. I'm passionate about creating user-friendly, responsive
+        web applications that provide value to users. I'm always eager to learn
+        new technologies and improve my skills.
+      </p>
+    </section>
+
+    <ExperienceSection title="Experiences">
+      <Experience
+        when={[new Date("2023-04-14")]}
+        where={{
+          name: "BOCASAY",
+          url: "https://www.bocasay.com/madagascar-agile-it-service-centre/",
+        }}
+        title="Web developer"
+        techno={["React", "ExtJS", "GraphQL", "SQL"]}
+      >
+        <p slot="description">
+          Developed a large-scale web application for SDS and cosmetic
+          regulation. Redesigned the responsive, user-friendly interface and
+          collaborated with the team to deliver high-performance web solutions.
+        </p>
+      </Experience>
+
+      <Experience
+        when={[new Date("2022-11-01"), new Date("2023-04-01")]}
+        where={{
+          name: "BOCASAY",
+          url: "https://www.bocasay.com/madagascar-agile-it-service-centre/",
+        }}
+        title="Internship"
+        techno={["TypeScript", "VS Code API", "React"]}
+      >
+        <p slot="description">
+          Built a VS Code plugin that simplifies i18n management across
+          projects.
+        </p></Experience
+      >
+
+      <Experience
+        title="Frontend developer"
+        where={{
+          name: "Freelance",
+        }}
+        when={[new Date("2021-10-01"), new Date("2022-10-01")]}
+        techno={["HTML5", "CSS3", "nodejs", "React"]}
+      >
+        <p slot="description">
+          Developed high-performance, responsive web applications, like online
+          learning platforms and ERP systems. Proactively managed project
+          timelines and maintained effective client communication, consistently
+          ensuring timely project delivery.
+        </p>
+      </Experience>
+    </ExperienceSection>
+    <ExperienceSection
+      title="Studies"
+      class="print:mt-12"
+      style={{ "page-break-before": "always" }}
+    >
+      <Experience
+        title="Certificate in web development"
+        where={{
+          name: "SAYNA",
+          url: "https://sayna.io/",
+        }}
+        when={[new Date("2020-10-01"), new Date("2021-07-01")]}
+      >
+        <p slot="description">
+          Completed an intensive web development program, focusing on full-stack
+          development with JavaScript, React, Node.js and SQL.
+        </p>
+
+        <p slot="extra" class="mt-2">
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/1OdNuCwUzestFYlSSe5S_uqk_k7u0uRe-/view?usp=sharing"
+          >
+            <span class="text-neutral-600">View Certificate</span>
+          </a>
+        </p>
+      </Experience>
+    </ExperienceSection>
+
+    <section>
+      <h2 class="text-xl font-semibold">Languages</h2>
+
+      <ul class="mt-3 list-disc space-y-4 pl-2">
+        <li>
+          <p>Malagasy (native)</p>
+        </li>
+        <li>
+          <p>French (fluent)</p>
+        </li>
+        <li>
+          <p>English (technical proficiency)</p>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold">Links</h2>
+
+      <ul class="mt-3 list-disc space-y-4 pl-2">
+        <li>
+          <a href="https://github.com/ony-boom" target="_blank"> Github </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://linkedin.com/in/ony-boom">
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Layout>
