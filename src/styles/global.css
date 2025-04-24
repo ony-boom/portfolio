@@ -2,6 +2,7 @@
 
 @theme {
     --font-serif: "Crimson Pro", serif;
+    --font-sans: "General Sans", sans-serif;
 }
 
 @layer base {
@@ -16,6 +17,18 @@
     }
 
     p {
-        @apply max-w-lg
+        @apply max-w-lg;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-serif;
+    }
+
+    h1 {
+        @apply text-3xl;
+    }
+
+    select {
+        @apply appearance-none px-1 outline-0 focus:outline text-neutral-400 focus:text-neutral-800 outline-neutral-400 rounded;
     }
 }

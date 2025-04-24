@@ -1,0 +1,36 @@
+---
+import Layout from "./Layout.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout>
+  <div class="space-y-8">
+    <section>
+      <h1>
+        {t("home.hero.text")}
+      </h1>
+
+      <p
+        set:html={t("home.hero.leadText")}
+        class="mt-4 text-lg text-neutral-600"
+      />
+    </section>
+
+    <hr class="border-neutral-300" />
+
+    <section class="space-y-4">
+      <hgroup>
+        <h2 class="text-xl">
+          {t("home.portfolio.title")}
+        </h2>
+
+        <p class="mt-1 text-neutral-600 italic">
+          {t("home.portfolio.description")}
+        </p>
+      </hgroup>
+    </section>
+  </div>
+</Layout>
