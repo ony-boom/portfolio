@@ -20,6 +20,7 @@ export const ui = {
     "home.portfolio.title": "Portfolio",
     "home.portfolio.description": "The forever WIP",
     "resume.jobTitle": "Web Developer",
+    "resume.about": "About me",
   },
   fr: {
     "home.hero.text":
@@ -33,5 +34,6 @@ export const ui = {
     "home.portfolio.title": "Portfolio",
     "home.portfolio.description": "L'en cours éternel",
     "resume.jobTitle": "Développeur Web",
+    "resume.about": "À propos de moi",
   },
 } as const;

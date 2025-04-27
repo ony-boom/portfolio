@@ -18,13 +18,13 @@ const { links, thumbnails, name } = Astro.props;
           src={thumbnails.src}
           autoplay
           loop
-          controls
-          class="h-full w-full object-contain transition-all group-hover:brightness-80 group-hover:blur-[1px]"
+          muted
+          class="h-full w-full object-contain transition-all group-hover:brightness-80"
         />
       ) : (
         <img
           src={thumbnails.src}
-          class="h-full w-full object-cover transition-all group-hover:brightness-80 group-hover:blur-[1px]"
+          class="h-full w-full object-cover transition-all group-hover:brightness-80"
           alt={thumbnails.alt}
         />
       )

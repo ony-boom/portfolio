@@ -3,17 +3,22 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
 import ExperienceSection from "../components/ExperienceSection.astro";
+
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout>
-  <div class="space-y-8 font-serif py-8">
+  <div class="space-y-8 py-8 font-serif">
     <div>
-      <hgroup class="space-y-1">
-        <h1 class="text-3xl font-semibold">
+      <hgroup class="space-y-3">
+        <h1>
           <span class="underline">Ony</span>
           <span class="uppercase">Rakotonirina</span>
         </h1>
-        <p class="text-lg">Web developer</p>
+        <p class="text-lg">{t("resume.jobTitle")}</p>
       </hgroup>
 
       <div class="mt-2 text-neutral-600">
@@ -26,7 +31,9 @@ import ExperienceSection from "../components/ExperienceSection.astro";
     </div>
 
     <section>
-      <h2 class="text-xl font-semibold">About me</h2>
+      <h2 class="text-xl">
+        {t("resume.about")}
+      </h2>
       <p class="mt-2">
         I'm a web developer with 2 years of experience in building web
         applications. I'm passionate about creating user-friendly, responsive
@@ -113,7 +120,7 @@ import ExperienceSection from "../components/ExperienceSection.astro";
     </ExperienceSection>
 
     <section>
-      <h2 class="text-xl font-semibold">Languages</h2>
+      <h2 class="text-xl">Languages</h2>
 
       <ul class="mt-3 list-disc space-y-4 pl-2">
         <li>
@@ -129,7 +136,7 @@ import ExperienceSection from "../components/ExperienceSection.astro";
     </section>
 
     <section>
-      <h2 class="text-xl font-semibold">Links</h2>
+      <h2 class="text-xl">Links</h2>
 
       <ul class="mt-3 list-disc space-y-4 pl-2">
         <li>
