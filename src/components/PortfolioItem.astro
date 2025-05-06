@@ -1,13 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
+import { type TPortfolioItem } from "../content.config";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { type TranslationKey } from "../i18n/ui";
 
-interface Props {
-  name: string;
-  links: { type: "live" | "source"; url: string }[];
-  thumbnails: { type: "image" | "video"; src: string; alt?: string };
-}
+interface Props extends TPortfolioItem {}
 
-const { links, thumbnails, name } = Astro.props;
+const { links, thumbnails, name, description } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="space-y-4">
@@ -19,12 +21,12 @@ const { links, thumbnails, name } = Astro.props;
           autoplay
           loop
           muted
-          class="h-full w-full object-contain transition-all group-hover:brightness-80"
+          class="h-full w-full object-contain transition-all group-hover:brightness-70"
         />
       ) : (
         <img
           src={thumbnails.src}
-          class="h-full w-full object-cover transition-all group-hover:brightness-80"
+          class="h-full w-full object-cover transition-all group-hover:brightness-78"
           alt={thumbnails.alt}
         />
       )
@@ -55,9 +57,11 @@ const { links, thumbnails, name } = Astro.props;
 
   <div class="space-y-2">
     <h3>
-      {name}
+      {t(name as TranslationKey)}
     </h3>
 
-    <slot />
+    <p>
+      {t(description as TranslationKey)}
+    </p>
   </div>
 </div>

@@ -1,0 +1,20 @@
+{
+  "mms": {
+    "name": "portfolio.mms.title",
+    "links": [
+      {
+        "type": "source",
+        "url": "https://github.com/ony-boom/mms"
+      },
+      {
+        "type": "live",
+        "url": "https://music.ony.world"
+      }
+    ],
+    "thumbnails": {
+      "type": "video",
+      "src": "/assets/portfolio/1.mp4"
+    },
+    "description": "portfolio.mms.description"
+  }
+}

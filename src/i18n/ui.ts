@@ -20,7 +20,15 @@ export const ui = {
     "home.portfolio.title": "Portfolio",
     "home.portfolio.description": "The forever WIP",
     "resume.jobTitle": "Web Developer",
+    "home.portfolio.cta": "Show all",
     "resume.about": "About me",
+    "portfolio.mms.title": "My music App",
+    "links.title": "Links",
+    "links.subtitle": "List of my social media and other links",
+    "portfolio.mms.description": `
+      I've always had a passion for music players,
+      so I set out to build one myself—a custom app that combines functionality with my love for music and design.
+    `,
   },
   fr: {
     "home.hero.text":
@@ -34,6 +42,17 @@ export const ui = {
     "home.portfolio.title": "Portfolio",
     "home.portfolio.description": "L'en cours éternel",
     "resume.jobTitle": "Développeur Web",
+    "home.portfolio.cta": "Montrer tout",
     "resume.about": "À propos de moi",
+    "links.title": "Liens",
+    "links.subtitle": "Liste de mes réseaux sociaux et autres liens",
+    "portfolio.mms.title": "Mon lecteur de musique",
+    "portfolio.mms.description": `
+      J’ai toujours été passionné par les lecteurs de musique,
+      alors j’ai décidé d’en créer un moi-même—une application personnalisée
+      et fonctionnelle qui reflète mon amour pour la musique et le design.
+    `,
   },
 } as const;
+
+export type TranslationKey = keyof typeof ui['en'];
