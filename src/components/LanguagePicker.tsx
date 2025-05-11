@@ -64,7 +64,11 @@ export function LanguagePicker({ defaultLanguage }: LanguagePickerProps) {
                 className={`${
                   isCurrent ? "font-semibold" : ""
                 } px-4 py-2 text-left uppercase transition-colors hover:bg-neutral-800`}
-                onClick={() => handleLanguageChange(locale as Locale)}
+                onClick={() => {
+                  if (!isCurrent) {
+                    handleLanguageChange(locale as Locale);
+                  }
+                }}
                 key={locale}
               >
                 {locale}
