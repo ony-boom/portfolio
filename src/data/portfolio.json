@@ -16,5 +16,24 @@
       "src": "/assets/portfolio/1.mp4"
     },
     "description": "portfolio.mms.description"
+  },
+
+  "nasa-gallery": {
+    "name": "portfolio.nasa-gallery.title",
+    "links": [
+      {
+        "type": "source",
+        "url": "https://github.com/ony-boom/nasa-gallery"
+      },
+      {
+        "type": "live",
+        "url": "https://nasagallery.vercel.app"
+      }
+    ],
+    "thumbnails": {
+      "type": "image",
+      "src": "/assets/portfolio/2.png"
+    },
+    "description": "portfolio.nasa-gallery.description"
   }
 }
