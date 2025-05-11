@@ -34,7 +34,7 @@ const mms = (await getEntry("portfolio", "mms"))?.data!;
 
       <div class="relative -mt-4 flex justify-center">
         <a
-          href="/portfolio"
+          href={lang === "en" ? "/portfolio" : `/${lang}/portfolio`}
           class="z-10 cursor-pointer rounded-full bg-neutral-900 p-1 px-6 text-sm text-neutral-100 no-underline transition-opacity hover:opacity-90"
         >
           {t("home.portfolio.cta")}
