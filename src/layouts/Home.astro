@@ -1,0 +1,83 @@
+---
+import Layout from "./Layout.astro";
+import { getEntry } from "astro:content";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import PortfolioItem from "../components/PortfolioItem.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const mms = (await getEntry("portfolio", "mms"))?.data!;
+---
+
+<Layout>
+  <div class="space-y-8 py-24">
+    <section>
+      <h1>{t("home.hero.text")}</h1>
+      <p
+        set:html={t("home.hero.leadText")}
+        class="mt-4 text-lg text-neutral-600"
+      />
+    </section>
+
+    <hr class="border-neutral-300" />
+
+    <section class="space-y-8">
+      <div>
+        <h2>{t("home.portfolio.title")}</h2>
+        <p class="mt-1 text-neutral-600 italic">
+          {t("home.portfolio.description")}
+        </p>
+      </div>
+
+      <PortfolioItem {...mms} />
+
+      <div class="relative -mt-4 flex justify-center">
+        <a
+          href={lang === "en" ? "/portfolio" : `/${lang}/portfolio`}
+          class="z-10 cursor-pointer rounded-full bg-neutral-900 p-1 px-6 text-sm text-neutral-100 no-underline transition-opacity hover:opacity-90"
+        >
+          {t("home.portfolio.cta")}
+        </a>
+        <div
+          class="absolute -top-20 left-0 h-16 w-full bg-gradient-to-b from-transparent to-neutral-100"
+        >
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-neutral-300" />
+
+    <section class="space-y-8">
+      <div>
+        <h2>{t("links.title")}</h2>
+
+        <p class="mt-1 text-neutral-600 italic">
+          {t("links.subtitle")}
+        </p>
+      </div>
+
+      <ul class="list-disc space-y-2">
+        <li>
+          <a href={lang === "fr" ? "/fr/resume" : "/resume"}> Resume </a>
+        </li>
+
+        <li>
+          <a href="mailto:onyrakoto27@gmail.com"> Email </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/ony-boom/"> Linkedin </a>
+        </li>
+
+        <li>
+          <a href="https://github.com/ony-boom">Github</a>
+        </li>
+
+        <li>
+          <a href="https://read.cv/ony">Read.cv</a>
+        </li>
+      </ul>
+    </section>
+  </div>
+</Layout>
