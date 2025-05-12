@@ -1,5 +1,6 @@
 ---
 import Techno from "../components/Techno.astro";
+import { getLangFromUrl } from "../i18n/utils.ts";
 
 interface Props {
   title: string;
@@ -12,14 +13,14 @@ interface Props {
   techno?: string[];
 }
 
-const { pathname } = Astro.url;
+const lang = getLangFromUrl(Astro.url);
 const { title, where, techno, when, locale } = Astro.props;
 const whenWithDefault = (when.length === 1 ? [...when, new Date()] : when) as [
   Date,
   Date,
 ];
 
-const isFrench = pathname === "/fr";
+const isFrench = lang === "fr";
 const localeToUse = isFrench ? "fr-FR" : (locale ?? "en-US");
 const formattedDates = whenWithDefault.map((date) =>
   new Date(date).toLocaleDateString(localeToUse, {
