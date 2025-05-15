@@ -31,7 +31,7 @@ const formattedDates = whenWithDefault.map((date) =>
 ---
 
 <li>
-  <h3>{title}</h3>
+  <h3 class="font-medium">{title}</h3>
 
   <p class="flex items-center justify-between text-neutral-600">
     {
@@ -43,7 +43,7 @@ const formattedDates = whenWithDefault.map((date) =>
         <span>{where.name}</span>
       )
     }
-    <span>
+    <span class="italic">
       <time class="capitalize" datetime={whenWithDefault[0].toISOString()}
         >{formattedDates[0]}</time
       > -{" "}
@@ -63,7 +63,7 @@ const formattedDates = whenWithDefault.map((date) =>
 
   <slot name="extra" />
 
-  <div class="mt-2">
+  <div class="mt-4">
     {techno && <Techno techno={techno} />}
   </div>
 </li>

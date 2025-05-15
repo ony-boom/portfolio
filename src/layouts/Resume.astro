@@ -13,16 +13,19 @@ const t = useTranslations(lang);
 <Layout>
   <div class="space-y-8 py-8 font-serif">
     <div>
-      <hgroup class="space-y-3">
-        <h1>
-          <span class="underline">Ony</span>
+      <hgroup class="space-y-4">
+        <h1 class="font-semibold">
+          <span>Ony</span>
           <span class="uppercase">Rakotonirina</span>
         </h1>
+
+        <hr class="border-neutral-300" />
+
         <p class="text-lg">{t("resume.jobTitle")}</p>
       </hgroup>
 
-      <div class="mt-2 text-neutral-600">
-        <p class="mt-2 space-x-2">
+      <div class="text-neutral-600">
+        <p class="mt-1 space-x-2">
           <a href="mailto:onyrakoto27@gmail.com">onyrakoto27@gmail.com</a>
           <span>&bull;</span>
           <span>+261 032 96 772 26</span>
@@ -31,9 +34,12 @@ const t = useTranslations(lang);
     </div>
 
     <section>
-      <h2 class="text-xl">
+      <h2 class="text-xl font-semibold">
         {t("resume.about")}
       </h2>
+
+      <hr class="my-1 border-neutral-300" />
+
       <p class="mt-2">
         {t("resume.about.description")}
       </p>
@@ -112,7 +118,9 @@ const t = useTranslations(lang);
     </ExperienceSection>
 
     <section>
-      <h2 class="text-xl">{t("resume.languages.title")}</h2>
+      <h2 class="text-xl font-semibold">{t("resume.languages.title")}</h2>
+
+      <hr class="my-1 border-neutral-300" />
 
       <ul class="mt-3 list-disc space-y-4 pl-2">
         <li>
@@ -128,7 +136,9 @@ const t = useTranslations(lang);
     </section>
 
     <section>
-      <h2 class="text-xl">{t("resume.links.title")}</h2>
+      <h2 class="text-xl font-semibold">{t("resume.links.title")}</h2>
+
+      <hr class="my-1 border-neutral-300" />
 
       <ul class="mt-3 list-disc space-y-4 pl-2">
         <li>

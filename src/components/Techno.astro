@@ -3,18 +3,31 @@ interface Props {
   techno: string[];
 }
 
+import { Icon } from "astro-icon/components";
 const { techno } = Astro.props;
-const { pathname } = Astro.url;
+
+const iconMap = {
+  react: "react",
+  extjs: "language-javascript",
+  nodejs: "nodejs",
+  graphql: "graphql",
+  html: "language-html5",
+  css3: "language-css3",
+  sql: "database",
+};
 ---
 
 <div class="flex gap-1">
-  <p>{pathname === "/fr" ? "Techno" : "Stack"}: {" "}</p>
-  <div class="flex flex-wrap gap-2">
+  <div class="flex flex-wrap gap-3">
     {
-      techno.map((tech, index) => (
-        <span>
+      techno.map((tech) => (
+        <span class="flex items-center gap-1 rounded-full border border-neutral-400 px-2 py-px font-sans text-xs">
+          <Icon
+            name={`mdi:${iconMap[tech.toLowerCase() as keyof typeof iconMap] ?? "language-typescript"}`}
+            size={16}
+          />
+
           {tech}
-          {index < techno.length - 1 && <span>,</span>}
         </span>
       ))
     }

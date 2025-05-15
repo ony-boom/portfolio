@@ -34,9 +34,8 @@ export const ui = {
       I've always had a passion for music players,
       so I set out to build one myself—a custom app that combines functionality with my love for music and design.
     `,
-    // New resume translations
     "resume.about.description":
-      "I'm a web developer with 2 years of experience in building web applications. I'm passionate about creating user-friendly, responsive web applications that provide value to users. I'm always eager to learn new technologies and improve my skills.",
+      "Creative and detail-oriented web developer passionate about building accessible, performant, and user-focused applications. Skilled in TypeScript, React, and Node.js, with a strong eye for clean architecture and smooth user experiences. Known for shipping polished features, solving problems collaboratively, and continuously refining both code and product quality.",
     "resume.experiences.title": "Experiences",
     "resume.experience.bocasay.developer.title": "Web developer",
     "resume.experience.bocasay.developer.description":
@@ -85,9 +84,8 @@ export const ui = {
       alors j'ai décidé d'en créer un moi-même—une application personnalisée
       et fonctionnelle qui reflète mon amour pour la musique et le design.
     `,
-    // New resume translations
     "resume.about.description":
-      "Je suis un développeur web avec 2 ans d'expérience dans la création d'applications web. Je suis passionné par la création d'applications web conviviales et réactives qui apportent de la valeur aux utilisateurs. Je suis toujours désireux d'apprendre de nouvelles technologies et d'améliorer mes compétences.",
+      "Développeur web créatif et attentif aux détails, passionné par la création d’applications accessibles, performantes et centrées sur l’utilisateur. Compétent en TypeScript, React et Node.js, avec un sens aigu de l’architecture propre et des expériences utilisateur fluides. Reconnu pour livrer des fonctionnalités soignées, résoudre les problèmes en équipe, et améliorer en continu la qualité du code et du produit.",
     "resume.experiences.title": "Expériences",
     "resume.experience.bocasay.developer.title": "Développeur web",
     "resume.experience.bocasay.developer.description":
