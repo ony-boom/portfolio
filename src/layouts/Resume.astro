@@ -87,9 +87,10 @@ const t = useTranslations(lang);
         </p>
       </Experience>
     </ExperienceSection>
+
     <ExperienceSection
       title={t("resume.studies.title")}
-      class="print:mt-12"
+      class="mt-12"
       style={{ "page-break-before": "always" }}
     >
       <Experience
@@ -117,7 +118,7 @@ const t = useTranslations(lang);
       </Experience>
     </ExperienceSection>
 
-    <section>
+    <section class="mt-12">
       <h2 class="text-xl font-semibold">{t("resume.languages.title")}</h2>
 
       <hr class="my-1 border-neutral-300" />
@@ -135,7 +136,7 @@ const t = useTranslations(lang);
       </ul>
     </section>
 
-    <section>
+    <section class="mt-12">
       <h2 class="text-xl font-semibold">{t("resume.links.title")}</h2>
 
       <hr class="my-1 border-neutral-300" />
