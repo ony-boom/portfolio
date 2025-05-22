@@ -1,42 +1,52 @@
 @import "tailwindcss";
 
 @theme {
-    --font-serif: "Crimson Pro", serif;
-    --font-sans: "General Sans", sans-serif;
+  --font-serif: "Crimson Pro", serif;
+  --font-sans: "General Sans", sans-serif;
 }
 
 @layer base {
-    ::selection {
-        @apply bg-neutral-800 text-neutral-100;
-    }
+  ::selection {
+    @apply bg-neutral-800 text-neutral-100;
+  }
 }
 
 @layer components {
-    a {
-        @apply underline;
-    }
+  a {
+    @apply underline;
+  }
 
-    p {
-        @apply max-w-lg;
-    }
+  p {
+    @apply max-w-lg;
+  }
 
-    h1, h2, h3, h4, h5, h6 {
-        @apply font-serif;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
 
-    h1 {
-        @apply text-4xl;
-    }
+  h1 {
+    @apply text-4xl;
+  }
 
-    h2 {
-        @apply text-2xl;
-    }
+  h2 {
+    @apply text-2xl;
+  }
 
-    h3 {
-        @apply text-xl
-    }
+  h3 {
+    @apply text-xl;
+  }
 
-    select {
-        @apply appearance-none px-1 outline-0 focus:outline text-neutral-400 focus:text-neutral-800 outline-neutral-400 rounded;
-    }
+  select {
+    @apply appearance-none rounded px-1 text-neutral-400 outline-0 outline-neutral-400 focus:text-neutral-800 focus:outline;
+  }
+
+  ul,
+  ol {
+    @apply !pl-4;
+  }
 }
