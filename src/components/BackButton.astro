@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<button
+  id="back-button"
+  class="flex items-center gap-2 text-neutral-500 transition-colors hover:text-neutral-700 print:hidden underline font-sans"
+>
+  <Icon name="lucide:arrow-left" />
+
+  <span>
+    {t("global.back")}
+  </span>
+</button>
+
+<script>
+  function goBack() {
+    window.history.back();
+  }
+
+  const backButton = document.getElementById("back-button");
+
+  backButton?.addEventListener("click", goBack);
+</script>

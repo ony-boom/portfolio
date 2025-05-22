@@ -3,12 +3,14 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import Layout from "./Layout.astro";
 import PortfolioItem from "../components/PortfolioItem.astro";
+import BackButton from "../components/BackButton.astro";
 
 const mms = await getCollection("portfolio");
 ---
 
 <Layout>
   <section class="space-y-8 py-12">
+    <BackButton />
     <h1>Portfolio</h1>
 
     <div class="space-y-12">

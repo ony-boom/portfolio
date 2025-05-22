@@ -10,6 +10,7 @@ export const showDefaultLang = false;
 
 export const ui = {
   en: {
+    "global.back": "Back",
     "home.hero.text": "Hi I'm Ony, and I build apps.",
     "home.hero.leadText": `
         Welcome to my digital garden, where I share<span
@@ -58,6 +59,7 @@ export const ui = {
     "resume.links.title": "Links",
   },
   fr: {
+    "global.back": "Retour",
     "home.hero.text":
       "Bonjour, je m'appelle Ony et je développe des applications.",
     "home.hero.leadText": `

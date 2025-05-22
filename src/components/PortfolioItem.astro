@@ -10,10 +10,12 @@ const { links, thumbnails, name, description } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const previewUrl = links.find((link) => link.type === "live")?.url ?? "#";
 ---
 
 <div class="space-y-4">
-  <div class="group relative aspect-video z-0">
+  <div class="group relative aspect-video">
     {
       thumbnails.type === "video" ? (
         <video
@@ -33,7 +35,7 @@ const t = useTranslations(lang);
     }
 
     <div
-      class="absolute bottom-0 left-0 flex w-full justify-end gap-2 p-4 opacity-0 transition-opacity group-hover:opacity-100"
+      class="pointer-events-none absolute bottom-0 left-0 flex w-full justify-end gap-2 p-4 opacity-100 md:opacity-0 transition-opacity group-hover:pointer-events-auto group-hover:opacity-100"
     >
       {
         links.map((link) => {
@@ -57,7 +59,9 @@ const t = useTranslations(lang);
 
   <div class="space-y-2">
     <h3>
-      {t(name as TranslationKey)}
+      <a href={previewUrl}>
+        {t(name as TranslationKey)}
+      </a>
     </h3>
 
     <p>
