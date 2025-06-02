@@ -79,7 +79,6 @@ const { defaultLanguage } = Astro.props;
       const currentPath = window.location.pathname;
       let newPath;
 
-      // Remove any language prefix from the current path (more generalized)
       const pathWithoutLang = currentPath.replace(/^\/([a-z]{2})(?:\/|$)/, "/");
 
       if (locale === "en") {

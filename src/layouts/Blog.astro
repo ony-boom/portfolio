@@ -1,0 +1,55 @@
+---
+import Layout from "./Layout.astro";
+import BackButton from "../components/BackButton.astro";
+import { getCollection } from "astro:content";
+
+const blogs = await getCollection("blog");
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("en-US", {
+    weekday: "short",
+    day: "numeric",
+    year: "numeric",
+  });
+}
+---
+
+<Layout>
+  <div class="space-y-8 py-8">
+    <BackButton />
+
+    <div class="space-y-4">
+      <h1>Blog</h1>
+
+      <p class="text-lg leading-relaxed text-neutral-600">
+        Hope you'll find something usefull here, though all of these are just
+        some nonsense .
+      </p>
+    </div>
+
+    <hr class="border-neutral-300" />
+
+    <ol class="list-decimal space-y-4">
+      {
+        blogs.map((blog) => {
+          return (
+            <li class="space-y-1 pl-2">
+              <div class="flex justify-between">
+                <a href={`/blog/${blog.id}`} class="block">
+                  {blog.data.title}
+                </a>
+
+                <time
+                  datetime={blog.data.pubDate.toString()}
+                  class="text-neutral-600 italic"
+                >
+                  {formatDate(blog.data.pubDate)}
+                </time>
+              </div>
+            </li>
+          );
+        })
+      }
+    </ol>
+  </div>
+</Layout>
