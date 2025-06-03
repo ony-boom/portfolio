@@ -13,7 +13,7 @@ importers:
         version: 8.1.4(astro@5.7.12(@types/node@22.15.2)(jiti@2.4.2)(lightningcss@1.29.1)(rollup@4.40.2)(typescript@5.7.3))(react@19.1.0)(rollup@4.40.2)
       '@iconify-json/lucide':
         specifier: ^1.2.39
-        version: 1.2.39
+        version: 1.2.45
       '@iconify-json/mdi':
         specifier: ^1.2.3
         version: 1.2.3
@@ -29,9 +29,6 @@ importers:
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
-      lucide-react:
-        specifier: ^0.509.0
-        version: 0.509.0(react@19.1.0)
       prettier-plugin-astro:
         specifier: ^0.14.1
         version: 0.14.1
@@ -258,8 +255,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@iconify-json/lucide@1.2.39':
-    resolution: {integrity: sha512-1BKCamEZRvArR7PErYCP4SZo9pAANJy6iQWpynI3GM8QKSQtWQgvw6usqGIFCQeJwFZHPOn2OcbDR4P56DyEaQ==}
+  '@iconify-json/lucide@1.2.45':
+    resolution: {integrity: sha512-izW3wk7Ll5HgNMc/m41eOKXb7nL1zFxXZdMyBOtqdwusHXPr8IWSC/ReSgWgxUF3xyNwiQsso5Ppkta2wsUrPg==}
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
@@ -1425,11 +1422,6 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-react@0.509.0:
-    resolution: {integrity: sha512-xCJHn6Uh5qF6PGml25vveCTrHJZcqS1G1MVzWZK54ZQsOiCVJk4fwY3oyo5EXS2S+aqvTpWYIfJN+PesJ0quxg==}
-    peerDependencies:
-      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
-
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -2530,7 +2522,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.0':
     optional: true
 
-  '@iconify-json/lucide@1.2.39':
+  '@iconify-json/lucide@1.2.45':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -3765,10 +3757,6 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-react@0.509.0(react@19.1.0):
-    dependencies:
-      react: 19.1.0
-
   magic-string@0.30.17:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -4319,7 +4307,8 @@ snapshots:
 
   radix3@1.1.2: {}
 
-  react@19.1.0: {}
+  react@19.1.0:
+    optional: true
 
   readdirp@4.1.2: {}
 

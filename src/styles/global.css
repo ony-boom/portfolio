@@ -49,4 +49,21 @@
   ol {
     @apply !pl-4;
   }
+
+  pre {
+    &::before {
+      width: 100%;
+      display: block;
+      text-align: end;
+      content: attr(data-language);
+      @apply mb-2 text-neutral-400;
+    }
+    @apply overflow-x-auto rounded border border-neutral-200 p-4;
+  }
+}
+
+article {
+  ul {
+    list-style-type: disc;
+  }
 }

@@ -10,6 +10,12 @@ export default defineConfig({
   output: "server",
   adapter: vercel(),
 
+  markdown: {
+    shikiConfig: {
+      theme: "catppuccin-latte",
+    },
+  },
+
   vite: {
     plugins: [tailwindcss()],
   },
