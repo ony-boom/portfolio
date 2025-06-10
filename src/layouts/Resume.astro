@@ -13,7 +13,7 @@ const t = useTranslations(lang);
 
 <Layout>
   <div class="space-y-8 py-8 font-serif">
-    <BackButton />
+    <BackButton backUrl={lang === "fr" ? "/fr" : "/"} />
     <div>
       <hgroup class="space-y-4">
         <h1 class="font-semibold">

@@ -62,6 +62,13 @@ const mms = (await getEntry("portfolio", "mms"))?.data!;
           <a href={lang === "fr" ? "/fr/resume" : "/resume"}> Resume </a>
         </li>
 
+        {
+          lang === "en" && (
+            <li>
+              <a href="/blog"> Blog </a>
+            </li>
+          )
+        }
         <li>
           <a href="mailto:onyrakoto27@gmail.com"> Email </a>
         </li>

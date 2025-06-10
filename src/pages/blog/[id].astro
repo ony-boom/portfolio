@@ -10,6 +10,10 @@ const blog = await getEntry("blog", String(id));
 if (!blog) {
   return Astro.redirect("/404");
 }
+
+if (!blog.data.published) {
+  return Astro.redirect("/blog");
+}
 ---
 
 <Layout>
