@@ -1,5 +1,5 @@
 import { defineCollection, z } from "astro:content";
-import { file } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 
 const portfolioSchema = z.object({
   name: z.string(),
@@ -17,11 +17,24 @@ const portfolioSchema = z.object({
   }),
 });
 
-export type TPortfolioItem = z.infer<typeof portfolioSchema>;
+const blogSchema = z.object({
+  title: z.string(),
+  published: z.boolean(),
+  description: z.string(),
+  pubDate: z.coerce.date(),
+  tags: z.array(z.string()).optional(),
+  updatedDate: z.coerce.date().optional(),
+});
 
 const portfolio = defineCollection({
   loader: file("./src/data/portfolio.json"),
   schema: portfolioSchema,
 });
 
-export const collections = { portfolio };
+const blog = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/data/blog" }),
+  schema: blogSchema,
+});
+
+export const collections = { portfolio, blog };
+export type TPortfolioItem = z.infer<typeof portfolioSchema>;

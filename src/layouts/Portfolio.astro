@@ -4,13 +4,15 @@ import { getCollection } from "astro:content";
 import Layout from "./Layout.astro";
 import PortfolioItem from "../components/PortfolioItem.astro";
 import BackButton from "../components/BackButton.astro";
+import { getLangFromUrl } from "../i18n/utils";
 
+const lang = getLangFromUrl(Astro.url);
 const mms = await getCollection("portfolio");
 ---
 
 <Layout>
   <section class="space-y-8 py-12">
-    <BackButton />
+    <BackButton backUrl={lang === "fr" ? "/fr" : "/"} />
     <h1>Portfolio</h1>
 
     <div class="space-y-12">

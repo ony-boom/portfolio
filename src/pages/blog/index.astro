@@ -1,0 +1,58 @@
+---
+import { formatDate } from "../../lib/utils.ts";
+import Layout from "../../layouts/Layout.astro";
+import BackButton from "../../components/BackButton.astro";
+import { getCollection } from "astro:content";
+
+const blogs = await getCollection("blog").then((blog) =>
+  blog.filter((b) => b.data.published),
+);
+
+const isEmpty = blogs.length === 0;
+---
+
+<Layout>
+  <div class="space-y-8 py-8">
+    <BackButton />
+
+    <div class="space-y-4">
+      <h1>Blog</h1>
+
+      <p class="text-lg leading-relaxed text-neutral-600">
+        Hope you'll find something usefull here, though all of these are just
+        some nonsense.
+      </p>
+    </div>
+
+    <hr class="border-neutral-300" />
+
+    <ol class:list={["space-y-4", { "list-decimal": !isEmpty }]}>
+      {
+        isEmpty ? (
+          <li class="text-neutral-600">Comming soon...!</li>
+        ) : (
+          blogs.map((blog) => {
+            return (
+              <li class="space-y-2 pl-2 not-last:border not-last:border-b-neutral-600">
+                <div class="flex justify-between">
+                  <a href={`/blog/${blog.id}`} class="block text-lg">
+                    {blog.data.title}
+                  </a>
+
+                  <time
+                    datetime={blog.data.pubDate.toString()}
+                    class="text-sm text-neutral-600 italic"
+                  >
+                    {formatDate(blog.data.pubDate)}
+                  </time>
+                </div>
+
+                <p class="truncate text-neutral-600">{blog.data.description}</p>
+              </li>
+            );
+          })
+        )
+      }
+    </ol>
+  </div>
+</Layout>

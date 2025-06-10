@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Blog from "../../layouts/Blog.astro";
+import BackButton from "../../components/BackButton.astro";
+import { getEntry } from "astro:content";
+
+const { id } = Astro.params;
+const blog = await getEntry("blog", String(id));
+
+if (!blog) {
+  return Astro.redirect("/404");
+}
+
+if (!blog.data.published) {
+  return Astro.redirect("/blog");
+}
+---
+
+<Layout>
+  <div class="space-y-8 py-8">
+    <BackButton />
+    <Blog {...blog} />
+  </div>
+</Layout>
