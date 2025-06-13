@@ -11,14 +11,15 @@ const mms = (await getEntry("portfolio", "mms"))?.data!;
 ---
 
 <Layout>
-  <div class="space-y-8 py-24">
-    <div>
+  <div class="space-y-8 py-12 lg:py-24">
+    <section class="space-y-4">
       <h1>{t("home.hero.text")}</h1>
-      <p
-        set:html={t("home.hero.leadText")}
-        class="mt-4 text-lg text-neutral-600"
-      />
-    </div>
+      <p set:html={t("home.hero.leadText")} class="text-lg text-neutral-600" />
+
+      <a href="/contact" class="button primary">
+        {t("home.hero.cta")}
+      </a>
+    </section>
 
     <hr class="border-neutral-300" />
 
@@ -35,7 +36,7 @@ const mms = (await getEntry("portfolio", "mms"))?.data!;
       <div class="relative -mt-4 flex justify-center">
         <a
           href={lang === "en" ? "/portfolio" : `/${lang}/portfolio`}
-          class="z-10 cursor-pointer rounded-full bg-neutral-900 p-1 px-6 text-sm text-neutral-100 no-underline transition-opacity hover:opacity-90"
+          class="button primary"
         >
           {t("home.portfolio.cta")}
         </a>

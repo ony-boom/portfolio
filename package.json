@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^8.1.4",
+    "@emailjs/browser": "^4.4.1",
     "@iconify-json/lucide": "^1.2.39",
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/vite": "^4.0.0",
