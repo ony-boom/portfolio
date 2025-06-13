@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BackButton from "../components/BackButton.astro";
+---
+
+<Layout>
+  <section class="space-y-8 py-12">
+    <BackButton />
+    <h1>Contact</h1>
+
+    <form action=""></form>
+  </section>
+</Layout>
+
+<script>
+  import * as emailJs from "@emailjs/browser";
+
+  const form = document.querySelector("form");
+
+  emailJs.init({
+    publicKey: import.meta.env.PUBLIC_EMAILJS_PUB_KEY,
+  });
+</script>
