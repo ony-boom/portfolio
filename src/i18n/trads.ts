@@ -49,6 +49,9 @@ export const trads = {
     "resume.languages.french": "French (fluent)",
     "resume.languages.english": "English (technical proficiency)",
     "resume.links.title": "Links",
+    "contact.form.name.label": "Name",
+    "contact.form.subject.label": "Subject",
+    "contact.form.subject.placeholder": "Subject of your message",
   },
   fr: {
     "global.back": "Retour",
@@ -102,5 +105,8 @@ export const trads = {
     "resume.languages.french": "Français (courant)",
     "resume.languages.english": "Anglais (compétence technique)",
     "resume.links.title": "Liens",
+    "contact.form.name.label": "Nom",
+    "contact.form.subject.label": "Sujet",
+    "contact.form.subject.placeholder": "Sujet de votre message",
   },
 } as const;
