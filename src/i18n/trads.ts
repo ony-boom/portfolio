@@ -52,6 +52,7 @@ export const trads = {
     "contact.form.name.label": "Name",
     "contact.form.subject.label": "Subject",
     "contact.form.subject.placeholder": "Subject of your message",
+    "contact.form.submit": "Send",
   },
   fr: {
     "global.back": "Retour",
@@ -108,5 +109,6 @@ export const trads = {
     "contact.form.name.label": "Nom",
     "contact.form.subject.label": "Sujet",
     "contact.form.subject.placeholder": "Sujet de votre message",
+    "contact.form.submit": "Envoyer",
   },
 } as const;

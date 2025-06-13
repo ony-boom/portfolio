@@ -16,7 +16,7 @@ const mms = (await getEntry("portfolio", "mms"))?.data!;
       <h1>{t("home.hero.text")}</h1>
       <p set:html={t("home.hero.leadText")} class="text-lg text-neutral-600" />
 
-      <a href="/contact" class="button primary">
+      <a href={lang === "fr" ? "/fr/contact" : "/contact" } class="button primary">
         {t("home.hero.cta")}
       </a>
     </section>
