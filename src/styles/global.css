@@ -58,20 +58,20 @@
       content: attr(data-language);
       @apply mb-2 text-neutral-400;
     }
+
     @apply overflow-x-auto rounded border border-neutral-200 p-4;
   }
 
-    button,
-    .button {
-        &.primary {
-            @apply z-10 inline-block cursor-pointer rounded-full bg-neutral-900 p-2 px-6 text-neutral-100 no-underline transition-opacity hover:opacity-90;
-        }
+  button,
+  .button {
+    &.primary {
+      @apply z-10 inline-block cursor-pointer rounded-full bg-neutral-900 p-2 px-6 text-neutral-100 no-underline transition-opacity hover:opacity-90;
     }
+  }
 
-
-    article {
-        ul {
-            list-style-type: disc;
-        }
+  article {
+    ul {
+      list-style-type: disc;
     }
+  }
 }
