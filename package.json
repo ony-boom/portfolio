@@ -9,13 +9,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.1.4",
+    "@astrojs/vercel": "^8.1.5",
     "@emailjs/browser": "^4.4.1",
     "@iconify-json/lucide": "^1.2.39",
     "@iconify-json/mdi": "^1.2.3",
     "@tailwindcss/vite": "^4.0.0",
     "@vercel/analytics": "^1.4.1",
-    "astro": "^5.7.12",
+    "astro": "^5.9.3",
     "astro-icon": "^1.1.5",
     "prettier-plugin-astro": "^0.14.1",
     "strip-indent": "^4.0.0",
