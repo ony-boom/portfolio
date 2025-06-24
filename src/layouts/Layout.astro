@@ -21,8 +21,18 @@ const isBlogPage = Astro.url.pathname.startsWith("/blog");
     <meta name="generator" content={Astro.generator} />
     <title>Ony | CV</title>
   </head>
-  <body class="bg-neutral-100 text-neutral-800">
-    <main class="mx-auto max-w-xl px-6 md:px-0">
+  <body class="bg-neutral-100 text-neutral-800 overflow-hidden">
+    <div
+      id="loader"
+      class="fixed inset-0 grid h-dvh place-items-center transition-opacity"
+    >
+      <div class="flex h-1 w-8 items-center rounded-full bg-neutral-200">
+        <span class="block h-full w-2 rounded-full bg-neutral-900"></span>
+      </div>
+    </div>
+    <main
+      class="mx-auto max-w-xl px-6 opacity-0 transition-opacity duration-500 md:px-0"
+    >
       <div class:list={["fixed right-4 bottom-4 z-50", { hidden: isBlogPage }]}>
         <LanguagePicker defaultLanguage={lang} />
       </div>
@@ -31,3 +41,36 @@ const isBlogPage = Astro.url.pathname.startsWith("/blog");
     <Analytics />
   </body>
 </html>
+
+<style>
+  @keyframes loader {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(300%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  #loader span {
+    animation: loader 1.5s infinite;
+  }
+</style>
+
+<script is:inline>
+  const main = document.querySelector("main");
+  const loader = document.getElementById("loader");
+
+  window.addEventListener("load", () => {
+    main.classList.remove("opacity-0");
+    loader.classList.add("opacity-0");
+
+    setTimeout(() => {
+      loader.classList.add("hidden");
+      document.body.classList.replace("overflow-hidden", "overflow-auto"); // Restore scroll after loader is hidden
+    }, 500);
+  });
+</script>
