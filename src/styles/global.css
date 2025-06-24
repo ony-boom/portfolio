@@ -9,6 +9,10 @@
   ::selection {
     @apply bg-neutral-800 text-neutral-100;
   }
+
+  html {
+    scrollbar-gutter: stable;
+  }
 }
 
 @layer components {
