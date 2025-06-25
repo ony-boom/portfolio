@@ -53,6 +53,8 @@ export const trads = {
     "contact.form.subject.label": "Subject",
     "contact.form.subject.placeholder": "Subject of your message",
     "contact.form.submit": "Send",
+
+    "page.main.description": `Hello, I'm Ony, a web developer with a passion for crafting beautiful and functional applications. Wwelcome to my portfolio, where you can explore my projects and learn more about my journey in the world of software development. Whether you're looking for inspiration or just want to connect, I'm glad you're here!`,
   },
   fr: {
     "global.back": "Retour",
@@ -110,5 +112,6 @@ export const trads = {
     "contact.form.subject.label": "Sujet",
     "contact.form.subject.placeholder": "Sujet de votre message",
     "contact.form.submit": "Envoyer",
+    "page.main.description": `Bonjour, je suis Ony, un développeur web passionné par la création d'applications belles et fonctionnelles. Bienvenue sur mon portfolio, où vous pouvez explorer mes projets et en savoir plus sur mon parcours dans le monde du développement logiciel. Que vous cherchiez de l'inspiration ou que vous souhaitiez simplement vous connecter, je suis ravi de vous accueillir !`,
   },
 } as const;

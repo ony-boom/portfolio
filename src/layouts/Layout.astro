@@ -1,11 +1,21 @@
 ---
 import "../styles/global.css";
 import Analytics from "@vercel/analytics/astro";
-import { getLangFromUrl } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import LanguagePicker from "../components/LanguagePicker.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
 
 const lang = getLangFromUrl(Astro.url);
 const isBlogPage = Astro.url.pathname.startsWith("/blog");
+
+const {
+  title = "Ony",
+  description = useTranslations(lang)("page.main.description"),
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -19,9 +29,11 @@ const isBlogPage = Astro.url.pathname.startsWith("/blog");
       rel="stylesheet"
     />
     <meta name="generator" content={Astro.generator} />
-    <title>Ony | CV</title>
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
   </head>
-  <body class="bg-neutral-100 text-neutral-800 overflow-hidden">
+  <body class="overflow-hidden bg-neutral-100 text-neutral-800">
     <div
       id="loader"
       class="fixed inset-0 grid h-dvh place-items-center transition-opacity"
