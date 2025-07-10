@@ -15,9 +15,34 @@
       "type": "video",
       "src": "/assets/portfolio/1.mp4"
     },
-    "description": "portfolio.mms.description"
+    "description": "portfolio.mms.description",
+    "techStack": [
+      "Tailwind",
+      "TypeScript",
+      "Prisma",
+      "Nodejs",
+      "React"
+    ]
   },
-
+  "deno-cliffy": {
+    "name": "portfolio.deno-cliffy.title",
+    "description": "portfolio.deno-cliffy.description",
+    "hideInPortfolio": true,
+    "links": [
+      {
+        "type": "source",
+        "url": "https://cliffy.io/"
+      }
+    ],
+    "thumbnails": {
+      "type": "image",
+      "src": "/assets/portfolio/3.png"
+    },
+    "techStack": [
+      "Deno",
+      "Typescript"
+    ]
+  },
   "nasa-gallery": {
     "name": "portfolio.nasa-gallery.title",
     "links": [

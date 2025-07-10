@@ -15,6 +15,8 @@ const portfolioSchema = z.object({
     src: z.string(),
     alt: z.optional(z.string()),
   }),
+  hideInPortfolio: z.optional(z.boolean()),
+  techStack: z.array(z.string()).optional(),
 });
 
 const blogSchema = z.object({

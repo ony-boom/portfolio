@@ -4,11 +4,16 @@ import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
 import ExperienceSection from "../components/ExperienceSection.astro";
 import BackButton from "../components/BackButton.astro";
+import { getCollection } from "astro:content";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import Project from "../components/Project.astro";
+import type { TranslationKey } from "../i18n/ui";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const portfolio = (await getCollection("portfolio")).slice(0, 2);
 ---
 
 <Layout>
@@ -27,8 +32,10 @@ const t = useTranslations(lang);
       </hgroup>
 
       <div class="text-neutral-600">
-        <p class="mt-1 space-x-2">
+        <p class="mt-1 flex flex-wrap gap-2">
           <a href="mailto:onyrakoto27@gmail.com">onyrakoto27@gmail.com</a>
+          <span>&bull;</span>
+          <a href="https://ony.world" target="_blank"> ony.world </a>
           <span>&bull;</span>
           <span>+261 032 96 772 26</span>
         </p>
@@ -75,19 +82,6 @@ const t = useTranslations(lang);
           {t("resume.experience.bocasay.intern.description")}
         </p></Experience
       >
-
-      <Experience
-        title={t("resume.experience.freelance.title")}
-        where={{
-          name: "Freelance",
-        }}
-        when={[new Date("2021-10-01"), new Date("2022-10-01")]}
-        techno={["HTML5", "CSS3", "nodejs", "React"]}
-      >
-        <p slot="description">
-          {t("resume.experience.freelance.description")}
-        </p>
-      </Experience>
     </ExperienceSection>
 
     <ExperienceSection
@@ -120,7 +114,31 @@ const t = useTranslations(lang);
       </Experience>
     </ExperienceSection>
 
-    <section class="mt-12">
+    <section>
+      <h2 class="font-semibold">Projects</h2>
+
+      <hr class="my-1 border-neutral-300" />
+
+      <ul class="mt-3 list-disc space-y-8 pl-2">
+        {
+          portfolio.map((project) => (
+            <Project
+              url={
+                project.data.links.find((link) => link.type === "source")?.url!
+              }
+              name={t(project.data.name as TranslationKey)}
+              techno={project.data.techStack}
+            >
+              <p slot="description">
+                {t(project.data.description as TranslationKey)}
+              </p>
+            </Project>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section>
       <h2 class="text-xl font-semibold">{t("resume.languages.title")}</h2>
 
       <hr class="my-1 border-neutral-300" />
@@ -138,21 +156,25 @@ const t = useTranslations(lang);
       </ul>
     </section>
 
-    <section class="mt-12">
+    <section>
       <h2 class="text-xl font-semibold">{t("resume.links.title")}</h2>
 
       <hr class="my-1 border-neutral-300" />
 
       <ul class="mt-3 list-disc space-y-4 pl-2">
         <li>
-          <a href="https://ony.world">Website</a>
-        </li>
-        <li>
-          <a href="https://github.com/ony-boom" target="_blank"> Github </a>
+          <a href="https://github.com/ony-boom" target="_blank">
+            Github
+            <span class="hidden print:inline"> : github.com/ony-boom </span>
+          </a>
         </li>
         <li>
           <a target="_blank" href="https://linkedin.com/in/ony-boom">
             LinkedIn
+
+            <span class="hidden print:inline">
+              : linkedin.com/in/ony-boom
+            </span>
           </a>
         </li>
       </ul>
