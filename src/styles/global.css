@@ -18,6 +18,7 @@
 @layer components {
   a {
     @apply underline;
+    text-underline-offset: 3px;
   }
 
   p {
