@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import Experience from "../components/Experience.astro";
 import ExperienceSection from "../components/ExperienceSection.astro";
 import BackButton from "../components/BackButton.astro";
+import PrintButton from "../components/PrintButton.astro";
 import { getCollection } from "astro:content";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
@@ -179,5 +180,9 @@ const portfolio = (await getCollection("portfolio")).slice(0, 2);
         </li>
       </ul>
     </section>
+  </div>
+
+  <div class="fixed right-26 bottom-4 flex flex-col gap-2 print:hidden">
+    <PrintButton />
   </div>
 </Layout>
