@@ -9,7 +9,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.2.1",
     "@emailjs/browser": "^4.4.1",
     "@iconify-json/lucide": "^1.2.39",
     "@iconify-json/mdi": "^1.2.3",
