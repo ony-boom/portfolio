@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "NIXPACKS_NODE_VERSION=22 astro"
+    "astro": "astro"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -30,5 +30,8 @@
       "esbuild",
       "sharp"
     ]
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
