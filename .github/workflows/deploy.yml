@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Trigger VPS Deployment
         run: |
-          APP_NAME="${{ github.event.repository.name }}"
+          APP_NAME="ony-world"
           URL="https://api.github.com/repos/ony-boom/os/dispatches"
           
           echo "::notice title=Triggering Deployment::Triggering deployment for $APP_NAME after successful cache"
