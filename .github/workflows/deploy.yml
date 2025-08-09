@@ -1,35 +1,43 @@
-name: Deploy
+name: Trigger VPS Deploy
 on:
-  push:
-    branches: 
+  workflow_run:
+    workflows: ["cachix cache"]
+    types:
+      - completed
+    branches:
       - main
-
 jobs:
   trigger-deploy:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     steps:
       - name: Trigger VPS Deployment
         run: |
           APP_NAME="ony-world"
           
-          echo "::notice title=Triggering Deployment::Triggering deployment for $APP_NAME"
+          echo "::notice title=Triggering Deployment::Triggering deployment for $APP_NAME after successful cache"
           
           curl -X POST \
             -H "Authorization: token ${{ secrets.VPS_DEPLOY_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Content-Type: application/json" \
-            https://api.github.com/repos/YOUR_USERNAME/YOUR_VPS_CONFIG_REPO/dispatches \
+            https://api.github.com/repos/ony-boom/os/dispatches \
             -d '{
               "event_type": "app-updated",
               "client_payload": {
                 "app_name": "'$APP_NAME'",
-                "commit": "${{ github.sha }}",
-                "author": "${{ github.actor }}",
+                "commit": "${{ github.event.workflow_run.head_sha }}",
+                "author": "${{ github.event.workflow_run.head_commit.author.name }}",
                 "repo_url": "${{ github.event.repository.html_url }}",
-                "commit_message": "${{ github.event.head_commit.message }}"
+                "commit_message": "${{ github.event.workflow_run.head_commit.message }}"
               }
             }'
           
           echo "::notice title=Success::VPS deployment triggered successfully"
           echo "Check deployment status at: https://github.com/YOUR_USERNAME/YOUR_VPS_CONFIG_REPO/actions"
+          
+      - name: Failure Notification
+        if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+        run: |
+          echo "::warning title=Cache Failed::Cachix workflow failed, skipping deployment"
