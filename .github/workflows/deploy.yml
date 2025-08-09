@@ -1,0 +1,35 @@
+name: Deploy
+on:
+  push:
+    branches: 
+      - main
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Trigger VPS Deployment
+        run: |
+          APP_NAME="ony-world"
+          
+          echo "::notice title=Triggering Deployment::Triggering deployment for $APP_NAME"
+          
+          curl -X POST \
+            -H "Authorization: token ${{ secrets.VPS_DEPLOY_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Content-Type: application/json" \
+            https://api.github.com/repos/YOUR_USERNAME/YOUR_VPS_CONFIG_REPO/dispatches \
+            -d '{
+              "event_type": "app-updated",
+              "client_payload": {
+                "app_name": "'$APP_NAME'",
+                "commit": "${{ github.sha }}",
+                "author": "${{ github.actor }}",
+                "repo_url": "${{ github.event.repository.html_url }}",
+                "commit_message": "${{ github.event.head_commit.message }}"
+              }
+            }'
+          
+          echo "::notice title=Success::VPS deployment triggered successfully"
+          echo "Check deployment status at: https://github.com/YOUR_USERNAME/YOUR_VPS_CONFIG_REPO/actions"
