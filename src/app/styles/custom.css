@@ -1,0 +1,21 @@
+:root {
+    --ff-sans: sans-serif;
+    --ff-serif: serif;
+    --ff-mono: monospace;
+}
+
+@theme inline {
+    --font-sans: var(--ff-sans);
+    --font-mono: var(--ff-mono);
+    --font-serif: var(--ff-serif);
+}
+
+@layer components {
+    h1 {
+        @apply font-serif text-4xl;
+    }
+
+    p, button, a {
+        @apply font-sans font-light;
+    }
+}

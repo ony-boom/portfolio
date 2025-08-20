@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { geistMono, geistSans } from "@/app/fonts";
+import { fontSans, fontSerif } from "@/app/fonts";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale, NextIntlClientProvider, type Locale } from "next-intl";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -42,7 +42,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${fontSans.variable} ${fontSerif.variable} antialiased`}
       >
         <NextIntlClientProvider>
           <ThemeProvider
@@ -51,7 +51,9 @@ export default async function RootLayout({
             defaultTheme="system"
             disableTransitionOnChange
           >
-            {children}
+            <main className="max-w-xl mx-auto">
+              {children}
+            </main>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
