@@ -1,8 +1,12 @@
 {
+  "Globals": {
+    "jobTitle": "Software Engineer"
+  },
   "Index": {
     "metadata": {
-      "title": "Ony | Full-Stack Engineer",
-      "description": "Full-stack engineer focused on React, TypeScript, and Go. I enjoy turning ideas into scalable, practical, and user-friendly applications."
-    }
+      "title": "Ony",
+      "description": "I’m Ony, a front-end developer crafting clear and intuitive software at the intersection of design and engineering."
+    },
+    "intro": "I <b>create</b> simple, human-focused <b>software</b>—where design meets engineering. Clarity, usability, and a natural flow are at the heart of everything I build."
   }
 }

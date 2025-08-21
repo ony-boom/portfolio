@@ -7,6 +7,7 @@ import { fontSans, fontSerif } from "@/app/fonts";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale, NextIntlClientProvider, type Locale } from "next-intl";
 import { ThemeProvider } from "@/components/theme-provider";
+import { NavBar } from "@/components/nav-bar";
 
 type Props = {
   children: ReactNode;
@@ -51,7 +52,8 @@ export default async function RootLayout({
             defaultTheme="system"
             disableTransitionOnChange
           >
-            <main className="max-w-xl mx-auto">
+            <main className="mx-auto max-w-xl px-6 py-8 md:px-0">
+              <NavBar />
               {children}
             </main>
           </ThemeProvider>

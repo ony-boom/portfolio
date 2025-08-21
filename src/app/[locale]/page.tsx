@@ -1,22 +1,21 @@
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations();
   return (
-    <div className="py-12">
-      <div className="space-y-4">
-        <h1>Hi, I&#39;m Ony. I bring ideas to life through code.</h1>
+    <div>
+      <div className="space-y-6">
+        <div className="space-y-2">
+          <h1>Ony</h1>
+          <p className="text-muted-foreground">{t("Globals.jobTitle")}</p>
+        </div>
 
         <p className="text-lg">
-          Welcome to my digital garden, where I share insights on software
-          development and the things I&#39;m passionate about. Explore my
-          projects and discover how I blend creativity with technical know-how,
-          all with my personal touch.
+          {t.rich("Index.intro", {
+            b: (chunks) => <span className="font-medium">{chunks}</span>,
+          })}
         </p>
-
-        <Button size="lg" variant="default">
-          Get in touch
-        </Button>
       </div>
 
       <Separator className="my-8" />
