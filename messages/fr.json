@@ -1,12 +1,14 @@
 {
   "Globals": {
-    "jobTitle": "Ingénieur logiciel"
+    "jobTitle": "Ingénieur logiciel",
+    "projects": "Projets"
   },
   "Index": {
     "metadata": {
       "title": "Ony",
       "description": "Je suis Ony, développeur front-end. Je conçois des applications claires et intuitives, alliant design et précision technique."
     },
+    "cta": "Me contacter",
     "intro": "Je <b>crée</b> des <b>logiciels</b> simples et centrés sur l’humain, là où design et ingénierie se rencontrent. Clarté, fluidité et simplicité guident chacune de mes créations."
   }
 }

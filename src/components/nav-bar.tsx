@@ -3,9 +3,9 @@ import { LanguageSwitch } from "@/components/language-switch";
 
 export function NavBar() {
   return (
-    <div className="flex items-center justify-end gap-1 py-4">
+    <nav className="bg-background with-noise sticky top-0 z-50 flex items-center justify-end gap-1 py-4">
       <LanguageSwitch />
       <ModeToggle />
-    </div>
+    </nav>
   );
 }

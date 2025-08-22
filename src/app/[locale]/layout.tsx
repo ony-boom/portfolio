@@ -1,13 +1,12 @@
-import "../styles/globals.css";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import { NavBar } from "@/components/nav-bar";
 import { fontSans, fontSerif } from "@/app/fonts";
+import { ThemeProvider } from "@/components/theme-provider";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale, NextIntlClientProvider, type Locale } from "next-intl";
-import { ThemeProvider } from "@/components/theme-provider";
-import { NavBar } from "@/components/nav-bar";
 
 type Props = {
   children: ReactNode;
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: Readonly<Props>) {
@@ -43,18 +42,15 @@ export default async function RootLayout({
   return (
     <html lang={locale} suppressHydrationWarning>
       <body
-        className={`${fontSans.variable} ${fontSerif.variable} antialiased`}
+        className={`${fontSans.variable} ${fontSerif.variable} with-noise antialiased`}
       >
         <NextIntlClientProvider>
-          <ThemeProvider
-            enableSystem
-            attribute="class"
-            defaultTheme="system"
-            disableTransitionOnChange
-          >
+          <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <main className="mx-auto max-w-xl px-6 py-8 md:px-0">
-              <NavBar />
-              {children}
+              <header>
+                <NavBar />
+              </header>
+              <div className="mt-8">{children}</div>
             </main>
           </ThemeProvider>
         </NextIntlClientProvider>
