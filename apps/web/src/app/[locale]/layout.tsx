@@ -46,7 +46,7 @@ export default async function LocaleLayout({
       >
         <NextIntlClientProvider>
           <ThemeProvider enableSystem attribute="class" defaultTheme="system">
-            <main className="mx-auto max-w-xl px-6 py-8 md:px-0">
+            <main className="mx-auto max-w-xl px-8 py-0 sm:px-0 sm:py-4">
               <header>
                 <NavBar />
               </header>

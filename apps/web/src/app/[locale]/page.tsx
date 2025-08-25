@@ -1,24 +1,18 @@
-import { MapPin } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { Link } from "@/i18n/navigation";
+import { Separator } from "@/components/ui/separator";
+import { ProjectList } from "@/components/project-list/suspensed-list";
 
 export default function Home() {
   const t = useTranslations();
+
   return (
     <div className="space-y-8">
       <div className="space-y-6">
         <div className="space-y-2">
           <h1>Ony</h1>
-          <div className="text-muted-foreground flex items-center space-x-2">
-            <p>{t("Globals.jobTitle")}</p>
-            <p>&bull;</p>
-            <p className="flex items-center gap-1">
-              <MapPin className="size-4" />
-              <span>Antananarivo/Madagascar</span>
-            </p>
-          </div>
+          <p className="text-muted-foreground">{t("Globals.jobTitle")}</p>
         </div>
 
         <p className="text-lg">
@@ -37,7 +31,9 @@ export default function Home() {
       <Separator />
 
       <div className="space-y-6">
-        <h2>{t("Globals.projects")}</h2>
+        <p className="font-serif">{t("Globals.projects")}</p>
+
+        <ProjectList limit={1} />
       </div>
     </div>
   );
