@@ -12,7 +12,9 @@ export default function Home() {
       <div className="space-y-6">
         <div className="space-y-2">
           <h1>Ony</h1>
-          <p className="text-muted-foreground">{t("Globals.jobTitle")}</p>
+          <p className="text-muted-foreground text-lg">
+            {t("Globals.jobTitle")}
+          </p>
         </div>
 
         <p className="text-lg">
@@ -30,10 +32,14 @@ export default function Home() {
 
       <Separator />
 
-      <div className="space-y-6">
-        <p className="font-serif">{t("Globals.projects")}</p>
+      <div className="space-y-4">
+        <h4 className="font-serif">{t("Globals.projects")}</h4>
 
         <ProjectList limit={1} />
+      </div>
+
+      <div className="space-y-4">
+        <h4 className="font-serif">Link</h4>
       </div>
     </div>
   );

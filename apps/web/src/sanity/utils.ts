@@ -3,8 +3,8 @@ import { type Locale } from "next-intl";
 import { builder } from "@/sanity/client";
 import { SanityReference } from "next-sanity";
 
-export function getTranslationFromTranslatedField(
-  fields: TranslatedField[],
+export function getTranslationFromTranslatedField<T>(
+  fields: TranslatedField<T>[],
   language: Locale,
 ) {
   return fields.find((field) => field._key === language)!.value;
