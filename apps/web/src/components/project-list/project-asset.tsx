@@ -1,11 +1,8 @@
 import Image from "next/image";
-import { ComponentProps } from "react";
 import { type Asset, isImageAsset } from "@/sanity/types";
 import { cn } from "@/lib/utils";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
-export type VideoAssetProps = ComponentProps<"video">;
-export type ImageAssetProps = ComponentProps<typeof Image>;
 export type ProjectAssetProps = {
   asset: Asset;
   className?: string;

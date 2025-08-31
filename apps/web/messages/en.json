@@ -1,14 +1,14 @@
 {
   "Globals": {
     "jobTitle": "Software Engineer",
-    "projects": "Projects"
+    "projects": "Selected works"
   },
   "Index": {
     "metadata": {
       "title": "Ony",
       "description": "I’m Ony, a front-end developer crafting clear and intuitive software at the intersection of design and engineering."
     },
-    "cta": "Get in touch",
+    "cta": "Currently taking on <link>new work</link>.",
     "intro": "I <b>create</b> simple, human-focused <b>software</b>—where design meets engineering. Clarity, usability, and a natural flow are at the heart of everything I build."
   }
 }

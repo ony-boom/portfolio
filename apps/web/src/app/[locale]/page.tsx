@@ -1,8 +1,26 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ProjectList } from "@/components/project-list/suspensed-list";
+
+const LINKS = [
+  {
+    name: "Email",
+    url: "mailto:ony@ony.world",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/ony-boom",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ony-boom/",
+  },
+  {
+    name: "Read.cv",
+    url: "https://read.cv/ony",
+  },
+];
 
 export default function Home() {
   const t = useTranslations();
@@ -11,7 +29,7 @@ export default function Home() {
     <div className="space-y-8">
       <div className="space-y-6">
         <div className="space-y-2">
-          <h1>Ony</h1>
+          <h1 className="text-2xl">Ony</h1>
           <p className="text-muted-foreground text-lg">
             {t("Globals.jobTitle")}
           </p>
@@ -23,23 +41,41 @@ export default function Home() {
           })}
         </p>
 
-        <Button asChild>
-          <Link href="mailto:ony@ony.world" target="_blank">
-            {t("Index.cta")}
-          </Link>
-        </Button>
+        <p>
+          {t.rich("Index.cta", {
+            link: (chunks) => (
+              <Link
+                href="mailto:ony@ony.world"
+                className="font-medium"
+                target="_blank"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
+        </p>
       </div>
 
       <Separator />
 
-      <div className="space-y-4">
-        <h4 className="font-serif">{t("Globals.projects")}</h4>
+      <div className="space-y-6">
+        <h4>{t("Globals.projects")}</h4>
 
         <ProjectList limit={1} />
       </div>
 
-      <div className="space-y-4">
-        <h4 className="font-serif">Link</h4>
+      <div className="space-y-6">
+        <h4>Links</h4>
+
+        <ul className="list-disc space-y-2">
+          {LINKS.map((link) => (
+            <li key={link.name}>
+              <Link href={link.url} target="_blank">
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

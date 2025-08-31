@@ -21,11 +21,11 @@ export async function NormalProjectList({
 }[0..${limit}]`);
 
   return (
-    <ul {...props} className={cn(className, "list-disc space-y-2 pl-4")}>
+    <ul {...props} className={cn(className, "list-disc space-y-8")}>
       {projects.map((project, index) => (
         <li
           key={project._id}
-          className="animate-fade-in w-max"
+          className="animate-fade-in"
           style={{
             animationDuration: '1s',
             animationDelay: `${index * 0.2}s`,

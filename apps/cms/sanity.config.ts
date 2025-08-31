@@ -21,7 +21,7 @@ export default defineConfig({
   title: 'ony.world',
 
   projectId: 'shryonlo',
-  dataset: 'dev',
+  dataset: 'production',
 
   plugins: [
     structureTool(),

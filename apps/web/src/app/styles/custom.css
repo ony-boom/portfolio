@@ -55,14 +55,6 @@
     @apply font-serif font-semibold;
   }
 
-  h1 {
-    @apply text-4xl;
-  }
-
-  h2 {
-    @apply text-2xl;
-  }
-
   p {
     text-wrap: pretty;
   }
@@ -77,12 +69,9 @@
     &:not([data-slot="button"]) {
       @apply underline;
     }
+  }
 
-    &[href^="https://"]:not(:empty)::after
-    {
-      content: " \2197";
-      font-size: 14px;
-      @apply z-0;
-    }
+  ul {
+    @apply pl-4;
   }
 }
