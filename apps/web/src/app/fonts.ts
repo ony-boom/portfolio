@@ -13,4 +13,5 @@ export const fontSerif = Libre_Baskerville({
 
 export const fontMono = JetBrains_Mono({
   variable: "--ff-mono",
+  subsets: ["latin"],
 });
