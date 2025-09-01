@@ -83,8 +83,4 @@ const LINKS = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/ony-boom/",
   },
-  {
-    name: "Read.cv",
-    url: "https://read.cv/ony",
-  },
 ];
