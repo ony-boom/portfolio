@@ -74,4 +74,8 @@
   ul {
     @apply pl-4;
   }
+
+  article {
+    @apply space-y-8;
+  }
 }

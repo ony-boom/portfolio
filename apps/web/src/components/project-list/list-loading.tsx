@@ -7,7 +7,7 @@ export function ProjectListLoading() {
       {items.map((_, index) => (
         <div key={index} className="space-y-2">
           <Skeleton className="h-6 w-24" />
-          <Skeleton className="h-12"/>
+          <Skeleton className="h-10"/>
         </div>
       ))}
     </div>

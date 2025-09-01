@@ -1,5 +1,5 @@
 import { Locale } from "next-intl";
-import { PortableText } from "next-sanity";
+import { PortableText, SanityImageAssetDocument } from "next-sanity";
 import { ComponentProps } from "react";
 
 type PortableTextValue = ComponentProps<typeof PortableText>["value"];
@@ -10,10 +10,10 @@ export type TranslatedField<T = string> = {
   value: T;
 };
 
-export type ImageAssetType = `image/${string}`;
-export type VideoAssetType = `video/${string}`;
-export type Asset = {
-  type: ImageAssetType | VideoAssetType;
+export type ProjectImageAssetType = `image/${string}`;
+export type ProjectVideoAssetType = `video/${string}`;
+export type ProjectAsset = {
+  type: ProjectImageAssetType | ProjectVideoAssetType;
   url: string;
 };
 
@@ -23,16 +23,40 @@ export type ProjectLink = {
 };
 
 export type Project = WithId<{
-  asset: Asset;
+  asset: ProjectAsset;
   links: ProjectLink[];
   name: TranslatedField[];
   description: TranslatedField<PortableTextValue>[];
 }>;
 
-export function isImageAsset(imageLike: string): imageLike is ImageAssetType {
+export type Blog = WithId<{
+  _createdAt: string;
+  slug: string;
+  title: string;
+  cover: {
+    asset: {
+      url: string;
+    };
+    caption?: string;
+  };
+  content: PortableTextValue;
+}>;
+
+export type SingleBlog = Pick<Blog, "title" | "content" | "_createdAt"> & {
+  cover: {
+    asset: SanityImageAssetDocument;
+    caption?: string;
+  };
+};
+
+export function isProjectImageAsset(
+  imageLike: string,
+): imageLike is ProjectImageAssetType {
   return imageLike.startsWith("image/");
 }
 
-export function isVideoAsset(videoLike: string): videoLike is VideoAssetType {
+export function isProjectVideoAsset(
+  videoLike: string,
+): videoLike is ProjectVideoAssetType {
   return videoLike.startsWith("video/");
 }

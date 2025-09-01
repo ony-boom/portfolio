@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { type Asset, isImageAsset } from "@/sanity/types";
+import { type ProjectAsset, isProjectImageAsset } from "@/sanity/types";
 import { cn } from "@/lib/utils";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export type ProjectAssetProps = {
-  asset: Asset;
+  asset: ProjectAsset;
   className?: string;
 };
 
@@ -13,7 +13,8 @@ export function ProjectAsset({ asset, className }: ProjectAssetProps) {
 
   return (
     <AspectRatio ratio={16 / 9}>
-      {isImageAsset(asset.type) ? (
+      {isProjectImageAsset(asset.type) ? (
+        // FIXME: use sanity image hook, this will break
         <Image
           className={cn(baseClassName, className)}
           src={asset.url}

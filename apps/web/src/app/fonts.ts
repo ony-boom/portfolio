@@ -1,4 +1,4 @@
-import { Inter, Libre_Baskerville } from "next/font/google";
+import { Inter, Libre_Baskerville, JetBrains_Mono } from "next/font/google";
 
 export const fontSans = Inter({
   variable: "--ff-sans",
@@ -9,4 +9,8 @@ export const fontSerif = Libre_Baskerville({
   variable: "--ff-serif",
   subsets: ["latin"],
   weight: ["400", "700"],
+});
+
+export const fontMono = JetBrains_Mono({
+  variable: "--ff-mono",
 });

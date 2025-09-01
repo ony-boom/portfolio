@@ -3,25 +3,6 @@ import { useTranslations } from "next-intl";
 import { Separator } from "@/components/ui/separator";
 import { ProjectList } from "@/components/project-list/suspensed-list";
 
-const LINKS = [
-  {
-    name: "Email",
-    url: "mailto:ony@ony.world",
-  },
-  {
-    name: "Github",
-    url: "https://github.com/ony-boom",
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/ony-boom/",
-  },
-  {
-    name: "Read.cv",
-    url: "https://read.cv/ony",
-  },
-];
-
 export default function Home() {
   const t = useTranslations();
 
@@ -61,7 +42,7 @@ export default function Home() {
       <div className="space-y-6">
         <h4>{t("Globals.projects")}</h4>
 
-        <ProjectList limit={1} />
+        <ProjectList />
       </div>
 
       <div className="space-y-6">
@@ -70,7 +51,11 @@ export default function Home() {
         <ul className="list-disc space-y-2">
           {LINKS.map((link) => (
             <li key={link.name}>
-              <Link href={link.url} target="_blank">
+              <Link
+                href={link.url}
+                target={link.url.startsWith("http") ? "_blank" : undefined}
+                className="underline"
+              >
                 {link.name}
               </Link>
             </li>
@@ -80,3 +65,26 @@ export default function Home() {
     </div>
   );
 }
+
+const LINKS = [
+  {
+    name: "Blog",
+    url: "/blog",
+  },
+  {
+    name: "Email",
+    url: "mailto:ony@ony.world",
+  },
+  {
+    name: "Github",
+    url: "https://github.com/ony-boom",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ony-boom/",
+  },
+  {
+    name: "Read.cv",
+    url: "https://read.cv/ony",
+  },
+];

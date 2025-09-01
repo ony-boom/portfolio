@@ -6,7 +6,7 @@ import { ProjectItem } from "@/components/project-list/project-item";
 
 export async function NormalProjectList({
   className,
-  limit = -1,
+  limit = 0,
   ...props
 }: ProjectListProps) {
   const projects = await client.fetch<Project[]>(`*[_type == "project"]{
@@ -18,7 +18,7 @@ export async function NormalProjectList({
     "type": asset.asset->mimeType,
     "url": asset.asset->url
   }
-}[0..${limit}]`);
+}${limit > 0 ? `[0...${limit}]` : ""}`);
 
   return (
     <ul {...props} className={cn(className, "list-disc space-y-8")}>
@@ -27,7 +27,7 @@ export async function NormalProjectList({
           key={project._id}
           className="animate-fade-in"
           style={{
-            animationDuration: '1s',
+            animationDuration: "1s",
             animationDelay: `${index * 0.2}s`,
           }}
         >

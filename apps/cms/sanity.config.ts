@@ -2,7 +2,7 @@ import {defineConfig, defineField} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
-// import {documentInternationalization} from '@sanity/document-internationalization'
+import {documentInternationalization} from '@sanity/document-internationalization'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
 
 const languages = [
@@ -38,12 +38,11 @@ export default defineConfig({
         }),
       ],
     }),
-    /*
+
     documentInternationalization({
       supportedLanguages: languages,
-      schemaTypes: [],
+      schemaTypes: ['blog'],
     }),
-*/
   ],
 
   schema: {
