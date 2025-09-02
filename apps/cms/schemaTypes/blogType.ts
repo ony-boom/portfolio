@@ -49,7 +49,17 @@ export const blogType = defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [
+        {type: 'block'},
+        {
+          type: 'code',
+          title: 'Code Block',
+          options: {
+            withFilename: true,
+            highlightedLines: true,
+          },
+        },
+      ],
     }),
   ],
 })

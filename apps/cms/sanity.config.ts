@@ -4,6 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
 import {documentInternationalization} from '@sanity/document-internationalization'
 import {internationalizedArray} from 'sanity-plugin-internationalized-array'
+import {codeInput} from '@sanity/code-input'
 
 const languages = [
   {
@@ -43,6 +44,7 @@ export default defineConfig({
       supportedLanguages: languages,
       schemaTypes: ['blog'],
     }),
+    codeInput(),
   ],
 
   schema: {

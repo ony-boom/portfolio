@@ -38,7 +38,7 @@ export function BlogContent({ blog, className, ...props }: BlogContentProps) {
               imageData={blog.cover}
             />
           </AspectRatio>
-          <p className="text-muted-foreground text-end text-sm italic">
+          <p className="text-muted-foreground text-end text-xs italic">
             {blog.cover.caption}
           </p>
         </div>
