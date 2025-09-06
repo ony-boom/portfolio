@@ -46,7 +46,12 @@ export default async function LocaleLayout({
         className={`${fontSans.variable} ${fontSerif.variable} ${fontMono.variable} with-noise antialiased`}
       >
         <NextIntlClientProvider>
-          <ThemeProvider enableSystem attribute="class" defaultTheme="system">
+          <ThemeProvider
+            enableSystem
+            attribute="class"
+            disableTransitionOnChange
+            defaultTheme="system"
+          >
             <BreadcrumbProvider>
               <main className="mx-auto max-w-xl px-8 py-0 pb-16 sm:px-0 sm:py-4">
                 <header className="sticky top-0 z-50">

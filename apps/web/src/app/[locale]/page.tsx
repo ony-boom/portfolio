@@ -45,23 +45,22 @@ export default function Home() {
         <ProjectList />
       </div>
 
-      <div className="space-y-6">
-        <h4>Links</h4>
 
-        <ul className="list-disc space-y-2">
-          {LINKS.map((link) => (
-            <li key={link.name}>
-              <Link
-                href={link.url}
-                target={link.url.startsWith("http") ? "_blank" : undefined}
-                className="underline"
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Separator />
+
+      <ul className="flex p-0 gap-4 flex-wrap">
+        {LINKS.map((link) => (
+          <li key={link.name}>
+            <Link
+              href={link.url}
+              target={link.url.startsWith("http") ? "_blank" : undefined}
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {link.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -83,4 +82,8 @@ const LINKS = [
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/ony-boom/",
   },
+  {
+    name: "X (Twitter)",
+    url: "https://x.com/ony_lovasoa",
+  }
 ];
