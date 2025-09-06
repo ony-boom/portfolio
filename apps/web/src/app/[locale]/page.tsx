@@ -10,13 +10,13 @@ export default function Home() {
     <div className="space-y-8">
       <div className="space-y-6">
         <div className="space-y-2">
-          <h1 className="text-2xl">Ony</h1>
-          <p className="text-muted-foreground text-lg">
+          <h1 className="text-xl">Ony</h1>
+          <p className="text-muted-foreground">
             {t("Globals.jobTitle")}
           </p>
         </div>
 
-        <p className="text-lg">
+        <p>
           {t.rich("Index.intro", {
             b: (chunks) => <span className="font-medium">{chunks}</span>,
           })}
