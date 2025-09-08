@@ -1,7 +1,10 @@
 {
   "Globals": {
     "jobTitle": "Software Engineer",
-    "projects": "Experiments & Projects"
+    "projects": "Experiments & Projects",
+    "native": "Native",
+    "fluent": "Fluent",
+    "professional": "Professional"
   },
   "Index": {
     "metadata": {
@@ -10,5 +13,34 @@
     },
     "cta": "Currently taking on <link>new work</link>.",
     "intro": "I <b>create</b> simple, human-focused <b>software</b>—where design meets engineering. Clarity, usability, and a natural flow are at the heart of everything I build."
+  },
+  "Resume": {
+    "workExperience": "Work Experiences",
+    "skills": "Skills",
+    "education": "Education",
+    "languages": "Languages",
+    "works": {
+      "bocasay": {
+        "title": "Web Developer",
+        "description": "Developed and maintained enterprise SaaS platform for cosmetic regulation compliance, serving 500+ clients and 2,000+ users globally. Built reusable React component library that improved team development efficiency. Led responsive UI redesign and resolved critical issues, enhancing user experience and application performance."
+      },
+      "internship": {
+        "title": "Intern",
+        "description": "Developed VS Code extension to automate internationalization workflows for development teams. Implemented automated translation key extraction, validation, and management features using VS Code APIs. Delivered complete developer tool from concept to working prototype, demonstrating end-to-end development capabilities."
+      },
+      "freelance": {
+        "title": "Freelance Front-End Developer",
+        "company": "Self-Employed",
+        "description": "Built custom websites for small businesses, focusing on responsive design and user-friendly interfaces. Provided ongoing technical support and maintenance to meet client requirements."
+      }
+    },
+    "educations": {
+      "sayna": {
+        "description": "Certified Full-Stack Web Developer."
+      },
+      "emedia": {
+        "description": "Audiovisual and digital communication (1 year)."
+      }
+    }
   }
 }

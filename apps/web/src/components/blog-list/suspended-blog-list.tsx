@@ -1,11 +1,11 @@
-import { Suspense } from "react";
+import { ComponentProps, Suspense } from "react";
 import { NormalBlogList } from "./normal-blog-list";
 import { LoadingBlogList } from "./loading-blog-list";
 
-function SuspendedBlogList() {
+function SuspendedBlogList(props: ComponentProps<typeof NormalBlogList>) {
   return (
     <Suspense fallback={<LoadingBlogList />}>
-      <NormalBlogList />
+      <NormalBlogList {...props} />
     </Suspense>
   );
 }

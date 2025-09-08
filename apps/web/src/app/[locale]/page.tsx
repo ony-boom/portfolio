@@ -11,9 +11,7 @@ export default function Home() {
       <div className="space-y-6">
         <div className="space-y-2">
           <h1 className="text-xl">Ony</h1>
-          <p className="text-muted-foreground">
-            {t("Globals.jobTitle")}
-          </p>
+          <p className="text-muted-foreground">{t("Globals.jobTitle")}</p>
         </div>
 
         <p>
@@ -45,10 +43,9 @@ export default function Home() {
         <ProjectList />
       </div>
 
-
       <Separator />
 
-      <ul className="flex p-0 gap-4 flex-wrap">
+      <ul className="flex flex-wrap gap-4 p-0">
         {LINKS.map((link) => (
           <li key={link.name}>
             <Link
@@ -71,6 +68,10 @@ const LINKS = [
     url: "/blog",
   },
   {
+    name: "CV",
+    url: "/resume",
+  },
+  {
     name: "Email",
     url: "mailto:ony@ony.world",
   },
@@ -85,5 +86,5 @@ const LINKS = [
   {
     name: "X (Twitter)",
     url: "https://x.com/ony_lovasoa",
-  }
+  },
 ];

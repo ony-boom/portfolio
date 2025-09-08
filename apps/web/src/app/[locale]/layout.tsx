@@ -53,7 +53,7 @@ export default async function LocaleLayout({
             defaultTheme="system"
           >
             <BreadcrumbProvider>
-              <main className="mx-auto max-w-xl px-8 py-0 pb-16 sm:px-0 sm:py-4">
+              <main className="mx-auto max-w-xl px-8 py-0 pb-16 sm:px-0 sm:py-4 sm:pb-16">
                 <header className="sticky top-0 z-50">
                   <NavBar />
                 </header>

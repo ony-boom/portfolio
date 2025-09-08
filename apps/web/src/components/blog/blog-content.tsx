@@ -4,7 +4,7 @@ import { useLocale } from "next-intl";
 import { BlogCover } from "./blog-cover";
 import { PortableText } from "next-sanity";
 import { SingleBlog } from "@/sanity/types";
-import { cn, formatDate } from "@/lib/utils";
+import { cn, formatDateLong } from "@/lib/utils";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { BreadcrumbContext } from "@/context/breadcrumb-context";
 import { ComponentProps, useContext, useLayoutEffect } from "react";
@@ -20,7 +20,7 @@ export function BlogContent({ blog, className, ...props }: BlogContentProps) {
     };
   }, [blog.title, setActiveTitle]);
 
-  const date = formatDate(blog._createdAt, locale);
+  const date = formatDateLong(blog._createdAt, locale);
 
   return (
     <article className={cn(className)} {...props}>

@@ -1,12 +1,12 @@
 import { Link } from "@/i18n/navigation";
-import { formatDate } from "@/lib/utils";
+import { formatDateLong } from "@/lib/utils";
 import { client } from "@/sanity/client";
 import { Blog } from "@/sanity/types";
 import { getLocale } from "next-intl/server";
 
 type BlogListItem = Pick<Blog, "_id" | "title" | "slug" | "_createdAt">;
 
-export async function NormalBlogList() {
+export async function NormalBlogList({ limit }: { limit?: number }) {
   const locale = await getLocale();
   const blogs = await client.fetch<BlogListItem[]>(
     `*[_type == "blog" && language == $locale] | order(_createdAt desc){
@@ -14,14 +14,14 @@ export async function NormalBlogList() {
       title,
       slug,
       _createdAt
-    }`,
+    }${limit ? `[0...${limit}]` : ""}`,
     { locale },
   );
 
   return (
     <ul className="list-none space-y-2 p-0">
       {blogs.map((blog, index) => {
-        const date = formatDate(blog._createdAt, locale);
+        const date = formatDateLong(blog._createdAt, locale);
 
         return (
           <li

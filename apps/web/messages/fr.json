@@ -1,7 +1,10 @@
 {
   "Globals": {
     "jobTitle": "Ingénieur logiciel",
-    "projects": "Experimentations & Projets"
+    "projects": "Experimentations & Projets",
+    "native": "Natif",
+    "fluent": "Courant",
+    "professional": "Professionnel"
   },
   "Index": {
     "metadata": {
@@ -10,5 +13,34 @@
     },
     "cta": "Actuellement disponible pour <link>de nouveaux projets</link>.",
     "intro": "Je <b>crée</b> des <b>logiciels</b> simples et centrés sur l’humain, là où design et ingénierie se rencontrent. Clarté, fluidité et simplicité guident chacune de mes créations."
+  },
+  "Resume": {
+    "workExperience": "Expériences professionnelles",
+    "skills": "Compétences",
+    "education": "Formation",
+    "languages": "Langues",
+    "works": {
+      "bocasay": {
+        "title": "Développeur web",
+        "description": "Développé et maintenu une plateforme SaaS d'entreprise pour la conformité réglementaire cosmétique, desservant 500+ clients et 2 000+ utilisateurs mondialement. Créé une bibliothèque de composants React réutilisables qui a amélioré l'efficacité de développement de l'équipe. Dirigé la refonte de l'interface responsive et résolu des problèmes critiques, améliorant l'expérience utilisateur et les performances de l'application."
+      },
+      "internship": {
+        "title": "Stage",
+        "description": "Développé une extension VS Code pour automatiser les workflows d'internationalisation des équipes de développement. Implémenté des fonctionnalités automatisées d'extraction, validation et gestion des clés de traduction via les APIs VS Code. Livré un outil complet du concept au prototype, démontrant des capacités de développement end-to-end."
+      },
+      "freelance": {
+        "title": "Développeur Front-End Freelance",
+        "company": "Indépendant",
+        "description": "Créé des sites web personnalisés pour des petites entreprises, en me concentrant sur le design responsive et les interfaces conviviales. Fourni un support technique continu et la maintenance pour répondre aux exigences des clients."
+      }
+    },
+    "educations": {
+      "sayna": {
+        "description": "Développeur Web Full-Stack certifié."
+      },
+      "emedia": {
+        "description": "Communication audiovisuelle et numérique (1 an)."
+      }
+    }
   }
 }
