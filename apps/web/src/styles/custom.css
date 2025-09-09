@@ -81,5 +81,17 @@
 
   pre {
     background-color: transparent !important;
+
+    code {
+      @apply space-y-1
+    }
+
+    span.line {
+      @apply inline-block w-full px-4 leading-loose;
+    }
+
+    span.highlighted {
+      @apply bg-accent;
+    }
   }
 }

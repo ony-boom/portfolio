@@ -10,7 +10,8 @@ type CodeComponentPropsValue = {
 export const BlockComponent: Partial<PortableTextReactComponents> = {
   types: {
     code: (props) => {
-      return <CodeBlock {...(props.value as CodeComponentPropsValue)} />;
+      const value = props.value as CodeComponentPropsValue;
+      return <CodeBlock {...value} />;
     },
   },
 };

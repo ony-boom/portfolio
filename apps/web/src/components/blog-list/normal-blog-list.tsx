@@ -9,7 +9,7 @@ type BlogListItem = Pick<Blog, "_id" | "title" | "slug" | "_createdAt">;
 export async function NormalBlogList({ limit }: { limit?: number }) {
   const locale = await getLocale();
   const blogs = await client.fetch<BlogListItem[]>(
-    `*[_type == "blog" && language == $locale] | order(_createdAt desc){
+    `*[_type == "blog" && language == $locale] | order(_createdAt asc){
       _id,
       title,
       slug,

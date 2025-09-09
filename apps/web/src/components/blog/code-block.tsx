@@ -21,9 +21,11 @@ export function CodeBlock({
   const timeoutRef = useRef<NodeJS.Timeout>(null);
 
   useEffect(() => {
-    void highlight(code, language as BundledLanguage, theme ?? "light").then(
-      setNodes,
-    );
+    void highlight(
+      code,
+      language as BundledLanguage,
+      theme ?? "light",
+    ).then(setNodes);
   }, [theme, code, language]);
 
   const handleCopy = async () => {
@@ -66,7 +68,7 @@ export function CodeBlock({
         </Popover>
       </div>
 
-      <div className="code-block overflow-auto p-4">{nodes}</div>
+      <div className="code-block overflow-auto py-4">{nodes}</div>
     </div>
   ) : (
     <Skeleton className="h-32 w-full rounded-md" />

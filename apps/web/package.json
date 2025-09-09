@@ -19,7 +19,6 @@
     "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "hast-util-to-jsx-runtime": "^2.3.6",
     "lucide-react": "^0.540.0",
     "next": "15.4.7",
     "next-intl": "^4.3.4",
@@ -33,6 +32,8 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@shikijs/transformers": "^3.12.2",
+    "hast-util-to-jsx-runtime": "^2.3.6",
     "@next/eslint-plugin-next": "^15.4.7",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

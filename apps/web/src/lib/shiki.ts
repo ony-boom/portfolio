@@ -1,23 +1,25 @@
 import type { JSX } from "react";
-import type { BundledLanguage } from "shiki/bundle/web";
-import { toJsxRuntime } from "hast-util-to-jsx-runtime";
 import { Fragment } from "react";
 import { jsx, jsxs } from "react/jsx-runtime";
-import { codeToHast } from "shiki/bundle/web";
+import { toJsxRuntime } from "hast-util-to-jsx-runtime";
+import { codeToHast, type BundledLanguage } from "shiki/bundle/web";
+import { transformerNotationHighlight } from "@shikijs/transformers";
 
 export async function highlight(
   code: string,
   lang: BundledLanguage,
   theme: string,
 ) {
+
   const out = await codeToHast(code, {
     lang,
+    transformers: [transformerNotationHighlight()],
     theme: theme == "dark" ? "vesper" : "kanagawa-lotus",
   });
 
   return toJsxRuntime(out, {
-    Fragment,
     jsx,
     jsxs,
+    Fragment,
   }) as JSX.Element;
 }
