@@ -8,6 +8,7 @@ import { cn, formatDateLong } from "@/lib/utils";
 import { AspectRatio } from "../ui/aspect-ratio";
 import { BreadcrumbContext } from "@/context/breadcrumb-context";
 import { ComponentProps, useContext, useLayoutEffect } from "react";
+import { BlockComponent } from "./block-component";
 
 export function BlogContent({ blog, className, ...props }: BlogContentProps) {
   const locale = useLocale();
@@ -30,22 +31,24 @@ export function BlogContent({ blog, className, ...props }: BlogContentProps) {
           <p className="text-muted-foreground italic">{date}</p>
         </div>
 
-        <div className="space-y-2">
-          <AspectRatio ratio={16 / 9} className="overflow-hidden rounded">
-            <BlogCover
-              alt={blog.cover.caption ?? ""}
-              className="object-cover"
-              imageData={blog.cover}
-            />
-          </AspectRatio>
-          <p className="text-muted-foreground text-end text-xs italic">
-            {blog.cover.caption}
-          </p>
-        </div>
+        {blog.cover && (
+          <div className="space-y-2">
+            <AspectRatio ratio={16 / 9} className="overflow-hidden rounded">
+              <BlogCover
+                alt={blog.cover.caption ?? ""}
+                className="object-cover"
+                imageData={blog.cover}
+              />
+            </AspectRatio>
+            <p className="text-muted-foreground text-end text-xs italic">
+              {blog.cover.caption}
+            </p>
+          </div>
+        )}
       </div>
 
       <div className="space-y-4">
-        <PortableText value={blog.content} />
+        <PortableText components={BlockComponent} value={blog.content} />
       </div>
     </article>
   );

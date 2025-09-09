@@ -43,7 +43,7 @@ export type Blog = WithId<{
 }>;
 
 export type SingleBlog = Pick<Blog, "title" | "content" | "_createdAt"> & {
-  cover: {
+  cover?: {
     asset: SanityImageAssetDocument;
     caption?: string;
   };

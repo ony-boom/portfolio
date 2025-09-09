@@ -22,7 +22,7 @@ export default defineConfig({
   title: 'ony.world',
 
   projectId: 'shryonlo',
-  dataset: 'production',
+  dataset: process.env.NODE_ENV === 'production' ? 'production' : 'development',
 
   plugins: [
     structureTool(),

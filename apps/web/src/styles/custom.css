@@ -78,4 +78,8 @@
   article {
     @apply space-y-8;
   }
+
+  pre {
+    background-color: transparent !important;
+  }
 }
