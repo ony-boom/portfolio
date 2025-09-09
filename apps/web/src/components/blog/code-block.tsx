@@ -66,7 +66,7 @@ export function CodeBlock({
         </Popover>
       </div>
 
-      <div className="code-block p-4">{nodes}</div>
+      <div className="code-block overflow-auto p-4">{nodes}</div>
     </div>
   ) : (
     <Skeleton className="h-32 w-full rounded-md" />
