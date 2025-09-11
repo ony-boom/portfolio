@@ -29,18 +29,22 @@ export async function NormalBlogList({ limit }: { limit?: number }) {
 
         return (
           <li
-            className="text-muted-foreground animate-fade-in hover:text-foreground flex items-baseline gap-6 transition-colors duration-300"
+            className="text-muted-foreground animate-fade-in hover:text-foreground flex items-baseline justify-between gap-12 sm:gap-6 transition-colors duration-300"
             key={blog._id}
             style={{
               animationDuration: "1s",
               animationDelay: `${index * 0.2}s`,
             }}
           >
-            <Link href={`/blog/${blog.slug}`} className="flex-shrink-0">
+            <Link
+              href={`/blog/${blog.slug}`}
+              title={blog.title}
+              className="truncate"
+            >
               {blog.title}
             </Link>
-            <span className="flex-1 border-b border-dashed border-current hidden sm:inline-block"></span>
-            <span className="flex-shrink-0 font-serif text-sm italic hidden sm:inline-block">
+            <span className="hidden flex-1 border-b border-dashed border-current sm:inline-block"></span>
+            <span className="flex-shrink-0 font-serif text-xs">
               {date}
             </span>
           </li>
