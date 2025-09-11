@@ -44,7 +44,14 @@ export default defineConfig({
       supportedLanguages: languages,
       schemaTypes: ['blog'],
     }),
-    codeInput(),
+    codeInput({
+      codeModes: [
+        {
+          name: 'nix',
+          loader: () => import('@replit/codemirror-lang-nix').then(({nix}) => nix()),
+        },
+      ],
+    }),
   ],
 
   schema: {

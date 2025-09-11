@@ -21,7 +21,7 @@ export function BlogContent({ blog, className, ...props }: BlogContentProps) {
     };
   }, [blog.title, setActiveTitle]);
 
-  const date = formatDateLong(blog._createdAt, locale);
+  const date = formatDateLong(blog.publishedAt, locale);
 
   return (
     <article className={cn(className)} {...props}>

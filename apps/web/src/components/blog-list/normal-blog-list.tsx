@@ -4,7 +4,10 @@ import { client } from "@/sanity/client";
 import { Blog } from "@/sanity/types";
 import { getLocale } from "next-intl/server";
 
-type BlogListItem = Pick<Blog, "_id" | "title" | "slug" | "_createdAt">;
+type BlogListItem = Pick<
+  Blog,
+  "_id" | "title" | "slug" | "_createdAt" | "publishedAt"
+>;
 
 export async function NormalBlogList({ limit }: { limit?: number }) {
   const locale = await getLocale();
@@ -13,6 +16,7 @@ export async function NormalBlogList({ limit }: { limit?: number }) {
       _id,
       title,
       slug,
+      publishedAt,
       _createdAt
     }${limit ? `[0...${limit}]` : ""}`,
     { locale },
@@ -21,7 +25,7 @@ export async function NormalBlogList({ limit }: { limit?: number }) {
   return (
     <ul className="list-none space-y-2 p-0">
       {blogs.map((blog, index) => {
-        const date = formatDateLong(blog._createdAt, locale);
+        const date = formatDateLong(blog.publishedAt, locale);
 
         return (
           <li

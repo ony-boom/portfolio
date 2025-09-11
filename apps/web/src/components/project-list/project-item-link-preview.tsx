@@ -20,7 +20,7 @@ export default function ProjectItemLinkPreview({
       {...props}
       className={cn(
         props.className,
-        "with-noise bg-background animate-fade-in border-border fixed hidden aspect-video w-80 rounded-md border p-1",
+        "bg-background animate-fade-in border-border fixed hidden aspect-video w-80 rounded-md border p-1",
         {
           "sm:block": open,
         },

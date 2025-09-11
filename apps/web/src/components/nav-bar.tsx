@@ -5,7 +5,7 @@ import { LanguageSwitch } from "@/components/language-switch";
 
 export function NavBar() {
   return (
-    <nav className="bg-background with-noise sticky top-0 z-50 flex items-center justify-between py-4">
+    <nav className="bg-background print:hidden sticky top-0 z-50 flex items-center justify-between py-4">
       <div className="sm:hidden">
         <BackButton className="text-muted-foreground hover:text-foreground" />
       </div>

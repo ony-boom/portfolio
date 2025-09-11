@@ -31,8 +31,10 @@ export type Project = WithId<{
 
 export type Blog = WithId<{
   _createdAt: string;
+  publishedAt: string;
   slug: string;
   title: string;
+  description: string;
   cover: {
     asset: {
       url: string;
@@ -42,7 +44,10 @@ export type Blog = WithId<{
   content: PortableTextValue;
 }>;
 
-export type SingleBlog = Pick<Blog, "title" | "content" | "_createdAt"> & {
+export type SingleBlog = Pick<
+  Blog,
+  "title" | "description" | "content" | "_createdAt" | "publishedAt"
+> & {
   cover?: {
     asset: SanityImageAssetDocument;
     caption?: string;

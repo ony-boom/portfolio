@@ -40,9 +40,21 @@ export const blogType = defineType({
     }),
 
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'string',
+    }),
+
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'string', // beccause of i18n slug issues
+    }),
+
+    defineField({
+      name: 'publishedAt',
+      title: 'Published At',
+      type: 'datetime',
     }),
 
     defineField({
@@ -55,6 +67,19 @@ export const blogType = defineType({
           type: 'code',
           title: 'Code Block',
           options: {
+            languageAlternatives: [
+              {title: 'Plain text', value: 'txt'},
+              {title: 'Javascript', value: 'javascript'},
+              {title: 'Typescript', value: 'typescript'},
+              {title: 'Nix', value: 'nix'},
+              {title: 'Go', value: 'go'},
+              {title: 'JSON', value: 'json'},
+              {title: 'HTML', value: 'html'},
+              {title: 'CSS', value: 'css'},
+              {title: 'SH', value: 'sh'},
+              {title: 'JSX', value: 'jsx'},
+              {title: 'TSX', value: 'tsx'},
+            ],
             withFilename: true,
             highlightedLines: true,
           },
