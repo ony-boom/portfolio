@@ -8,7 +8,11 @@ import { BreadcrumbContext } from "@/context/breadcrumb-context";
 
 const DisplayText = ({ text }: { text: string }) => {
   return (
-    <p style={{ fontWeight: "inherit" }} className="-mt-px text-inherit animate-fade-in">
+    <p
+      style={{ fontWeight: "inherit" }}
+      title={text}
+      className="animate-fade-in -mt-px max-w-56 truncate text-inherit"
+    >
       {text}
     </p>
   );
