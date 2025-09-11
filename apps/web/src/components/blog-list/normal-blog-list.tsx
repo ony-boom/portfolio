@@ -39,8 +39,8 @@ export async function NormalBlogList({ limit }: { limit?: number }) {
             <Link href={`/blog/${blog.slug}`} className="flex-shrink-0">
               {blog.title}
             </Link>
-            <span className="flex-1 border-b border-dashed border-current"></span>
-            <span className="flex-shrink-0 font-serif text-sm italic">
+            <span className="flex-1 border-b border-dashed border-current hidden sm:inline-block"></span>
+            <span className="flex-shrink-0 font-serif text-sm italic hidden sm:inline-block">
               {date}
             </span>
           </li>
