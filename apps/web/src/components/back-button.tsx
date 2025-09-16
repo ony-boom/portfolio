@@ -10,7 +10,23 @@ export function BackButton(props: BackButtonProps) {
   const router = useRouter();
 
   const handleClick = () => {
-    router.back();
+    const isInternalReferrer =
+      document.referrer &&
+      new URL(document.referrer).origin === window.location.origin;
+
+    if (window.history.length > 1 && isInternalReferrer) {
+      router.back();
+    } else {
+      const pathSegments = pathname.split("/").filter(Boolean);
+
+      if (pathSegments.length > 1) {
+        pathSegments.pop();
+        const parentPath = "/" + pathSegments.join("/");
+        router.push(parentPath);
+      } else {
+        router.push("/");
+      }
+    }
   };
 
   const isAtRoot = pathname === "/";
