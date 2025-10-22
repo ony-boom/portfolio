@@ -68,7 +68,7 @@ const LINKS = [
     url: "/blog",
   },
   {
-    name: "CV",
+    name: "Resume",
     url: "/resume",
   },
   {
