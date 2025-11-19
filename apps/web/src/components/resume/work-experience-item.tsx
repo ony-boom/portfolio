@@ -16,8 +16,25 @@ export function WorkExperienceItem({
 
   return (
     <div id={`work-${index}`}>
-      <div className="text-muted-foreground flex justify-between text-sm">
-        <p>
+      <div className="flex items-center justify-between">
+        <h3 className="font-sans font-medium">
+          {workExperience.title}
+          {workExperience.company && (
+            <>
+              {" "}
+              <span className="font-light">-</span>{" "}
+              {workExperience.companyUrl ? (
+                <Link target="_blank" href={workExperience.companyUrl}>
+                  {workExperience.company}
+                </Link>
+              ) : (
+                <span className="font-light">{workExperience.company}</span>
+              )}
+            </>
+          )}
+        </h3>
+
+        <p className="text-muted-foreground flex gap-2 text-sm">
           <span className="capitalize">
             {formatMonthYear(workExperience.dates.from, locale)}{" "}
           </span>{" "}
@@ -27,16 +44,6 @@ export function WorkExperienceItem({
           </span>
         </p>
       </div>
-      <h3 className="mt-2 font-sans font-medium">
-        {workExperience.title} <span className="font-light">-</span>{" "}
-        {workExperience.companyUrl ? (
-          <Link target="_blank" href={workExperience.companyUrl}>
-            {workExperience.company}
-          </Link>
-        ) : (
-          <span className="font-light">{workExperience.company}</span>
-        )}
-      </h3>
 
       <p className="mt-2">{workExperience.description}</p>
     </div>

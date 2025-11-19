@@ -1,6 +1,6 @@
 {
   "Globals": {
-    "jobTitle": "Software Engineer",
+    "jobTitle": "Software Developer",
     "projects": "Experiments & Projects",
     "native": "Native",
     "fluent": "Fluent",
@@ -39,7 +39,7 @@
         "description": "Certified Full-Stack Web Developer."
       },
       "emedia": {
-        "description": "Audiovisual and digital communication (1 year)."
+        "description": "Audiovisual and digital communication."
       }
     }
   }

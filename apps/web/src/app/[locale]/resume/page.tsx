@@ -76,12 +76,13 @@ export default async function ResumePage() {
       </SectionItem>
 
       <SectionItem title={t("Resume.languages")}>
-        <p>
-          Français ({t("Globals.fluent")}), English ({t("Globals.professional")}
-          ), Malagasy ({t("Globals.native")})
-        </p>
+        <ul className="p-0 list-disc list-inside">
+          <li>Français ({t("Globals.fluent")})</li>
+          <li>English ({t("Globals.professional")})</li>
+          <li>Malagasy ({t("Globals.native")})</li>
+        </ul>
       </SectionItem>
-    
+
       <PrintButton className="fixed bottom-4 right-4 print:hidden" />
     </div>
   );

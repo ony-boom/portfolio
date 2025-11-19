@@ -1,6 +1,6 @@
 {
   "Globals": {
-    "jobTitle": "Ingénieur logiciel",
+    "jobTitle": "Développeur Informatique",
     "projects": "Experimentations & Projets",
     "native": "Natif",
     "fluent": "Courant",
@@ -39,7 +39,7 @@
         "description": "Développeur Web Full-Stack certifié."
       },
       "emedia": {
-        "description": "Communication audiovisuelle et numérique (1 an)."
+        "description": "Communication audiovisuelle et numérique."
       }
     }
   }

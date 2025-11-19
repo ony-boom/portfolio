@@ -4,7 +4,7 @@ export type WorkExperience = {
     to: Date;
   };
 
-  company: string;
+  company?: string;
   companyUrl?: string;
   title: string;
   description: string;

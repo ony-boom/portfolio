@@ -2,8 +2,14 @@ import { Education, WorkExperience } from "@/types";
 import { getTranslations } from "next-intl/server";
 
 export const skills = {
-  frontend: ["React", "TypeScript", "JavaScript", "Next.js", "React Native"],
-  backend: ["Node.js", "Go (Golang)", "GraphQL"],
+  frontend: [
+    "TypeScript",
+    "JavaScript",
+    "Next.js",
+    "React/React Native",
+    "Angular",
+  ],
+  backend: ["Node.js", "Go (Golang)", "Python", "GraphQL"],
   infrastructure: ["Docker", "PostgreSQL", "Nix/NixOS"],
 };
 
@@ -39,7 +45,6 @@ export const getWorkExperiences = async (): Promise<WorkExperience[]> => {
         from: new Date(2021, 6), // June 2021
         to: new Date(2022, 9), // October 2022
       },
-      company: t("works.freelance.company"),
       title: t("works.freelance.title"),
       description: t("works.freelance.description"),
     },
