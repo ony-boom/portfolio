@@ -24,7 +24,7 @@ export default function Home() {
           {t.rich("Index.cta", {
             link: (chunks) => (
               <Link
-                href="mailto:ony@ony.world"
+                href="mailto:ony@rakoto27@gmail.com"
                 className="font-medium"
                 target="_blank"
               >
