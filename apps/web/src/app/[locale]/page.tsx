@@ -73,7 +73,7 @@ const LINKS = [
   },
   {
     name: "Email",
-    url: "mailto:ony@ony.world",
+    url: "mailto:onyrakoto27@gmail.com",
   },
   {
     name: "Github",

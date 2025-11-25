@@ -30,7 +30,7 @@ export default async function ResumePage() {
           <p>{t("Globals.jobTitle")}</p>
 
           <p className="flex flex-wrap gap-2 text-sm">
-            <Link href="mailto:ony@ony.world">ony@ony.world,</Link>
+            <Link href="mailto:onyrakoto27@gmail.com">onyrakoto27@gmail.com,</Link>
             <Link href="https://www.linkedin.com/in/ony-boom/">
               in/ony-boom,
             </Link>
